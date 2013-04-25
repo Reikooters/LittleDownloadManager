@@ -51,11 +51,6 @@ namespace LittleDownloadManager
 
         }
 
-        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
-        }
-
         private void treeView1_AfterSelect_1(object sender, TreeViewEventArgs e)
         {
 
@@ -120,6 +115,11 @@ namespace LittleDownloadManager
         }
 
         private void table1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
