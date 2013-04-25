@@ -56,11 +56,6 @@ namespace LittleDownloadManager
 
         }
 
-        private void kryptonPalette1_PalettePaint(object sender, ComponentFactory.Krypton.Toolkit.PaletteLayoutEventArgs e)
-        {
-
-        }
-
         /* --- SplitContainer focus workaround ---
          * by Scott Morrison of Microsoft */
         // Temp variable to store a previously focused control
