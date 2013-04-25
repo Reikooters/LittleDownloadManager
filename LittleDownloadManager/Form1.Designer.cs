@@ -236,8 +236,6 @@
             this.textColumn2,
             this.progressBarColumn1});
             this.columnModel1.HeaderHeight = 24;
-            // Sort the table by Filename (0th column)
-            this.table1.Sort(0, System.Windows.Forms.SortOrder.Ascending);
             // 
             // textColumn1
             // 
@@ -354,6 +352,8 @@
             this.tableModel1.Rows.AddRange(new XPTable.Models.Row[] {
             row1,
             row2});
+            // Now that table is full, sort the table by Filename (0th column)
+            this.table1.Sort(0, System.Windows.Forms.SortOrder.Ascending);
             // 
             // Form1
             // 
