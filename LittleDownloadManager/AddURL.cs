@@ -11,14 +11,43 @@ namespace LittleDownloadManager
 {
     public partial class AddURL : Form
     {
-        public AddURL()
+        private readonly Form1 form1;
+        public AddURL(Form1 parentForm)
         {
+            form1 = parentForm;
             InitializeComponent();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Check URL is valid
+            try
+            {
+                Uri uri = new Uri(textBox1.Text);
+            }
+            catch (UriFormatException)
+            {
+                MessageBox.Show("Invalid URL entered", "An error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Open a save dialog
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "All Files|*.*";
+            saveFileDialog1.Title = "Select save location";
+            saveFileDialog1.ShowDialog();
+
+            // If the file name is not an empty string open it for saving.
+            if (saveFileDialog1.FileName != "")
+            {
+                form1.addURLToTable(saveFileDialog1.FileName, textBox1.Text);
+                this.Close();
+            }
         }
     }
 }

@@ -92,7 +92,7 @@ namespace LittleDownloadManager
         // If File->Add URL is clicked
         private void addURLToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new AddURL();
+            Form f = new AddURL(this);
             f.ShowDialog();
         }
 
@@ -131,5 +131,24 @@ namespace LittleDownloadManager
         }
         /* --- end TreeView bold selection --- */
         #endregion
+
+        public void addURLToTable(String filename, String url)
+        {
+            XPTable.Models.Cell cell1 = new XPTable.Models.Cell();
+            XPTable.Models.Cell cell2 = new XPTable.Models.Cell();
+            XPTable.Models.Cell cell3 = new XPTable.Models.Cell();
+            Uri uri = new Uri(url);
+            cell1.Text = System.IO.Path.GetFileName(uri.LocalPath);
+            cell2.Text = url;
+            cell3.Data = 0;
+            XPTable.Models.Row row = new XPTable.Models.Row(
+                new XPTable.Models.Cell[] {
+                    cell1,
+                    cell2,
+                    cell3
+                }
+            );
+            tableModel1.Rows.Add(row);
+        }
     }
 }
