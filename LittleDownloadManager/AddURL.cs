@@ -26,11 +26,10 @@ namespace LittleDownloadManager
         private void button1_Click(object sender, EventArgs e)
         {
             // Check URL is valid
-            try
-            {
-                Uri uri = new Uri(textBox1.Text);
-            }
-            catch (UriFormatException)
+            Uri uriResult;
+            String uriName = textBox1.Text;
+            bool result = Uri.TryCreate(uriName, UriKind.Absolute, out uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps || uriResult.Scheme == Uri.UriSchemeFtp);
+            if (!result)
             {
                 MessageBox.Show("Invalid URL entered", "An error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
