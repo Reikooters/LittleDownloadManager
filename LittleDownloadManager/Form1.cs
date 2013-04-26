@@ -127,7 +127,7 @@ namespace LittleDownloadManager
         {
             e.Node.NodeFont = new System.Drawing.Font(treeView1.SelectedNode.TreeView.Font, treeView1.SelectedNode.TreeView.Font.Style ^ FontStyle.Bold);
             e.Node.Text = e.Node.Text;
-            e.Node.Expand();
+            //e.Node.Expand();
         }
         /* --- end TreeView bold selection --- */
         #endregion
