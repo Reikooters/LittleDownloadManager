@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            XPTable.Models.Row row1 = new XPTable.Models.Row();
-            XPTable.Models.Cell cell1 = new XPTable.Models.Cell();
-            XPTable.Models.CellStyle cellStyle1 = new XPTable.Models.CellStyle();
-            XPTable.Models.Cell cell2 = new XPTable.Models.Cell();
-            XPTable.Models.CellStyle cellStyle2 = new XPTable.Models.CellStyle();
-            XPTable.Models.Cell cell3 = new XPTable.Models.Cell();
-            XPTable.Models.CellStyle cellStyle3 = new XPTable.Models.CellStyle();
-            XPTable.Models.Row row2 = new XPTable.Models.Row();
-            XPTable.Models.Cell cell4 = new XPTable.Models.Cell();
-            XPTable.Models.CellStyle cellStyle4 = new XPTable.Models.CellStyle();
-            XPTable.Models.Cell cell5 = new XPTable.Models.Cell();
-            XPTable.Models.CellStyle cellStyle5 = new XPTable.Models.CellStyle();
-            XPTable.Models.Cell cell6 = new XPTable.Models.Cell();
-            XPTable.Models.CellStyle cellStyle6 = new XPTable.Models.CellStyle();
+            XPTable.Models.Row row3 = new XPTable.Models.Row();
+            XPTable.Models.Cell cell7 = new XPTable.Models.Cell();
+            XPTable.Models.CellStyle cellStyle7 = new XPTable.Models.CellStyle();
+            XPTable.Models.Cell cell8 = new XPTable.Models.Cell();
+            XPTable.Models.CellStyle cellStyle8 = new XPTable.Models.CellStyle();
+            XPTable.Models.Cell cell9 = new XPTable.Models.Cell();
+            XPTable.Models.CellStyle cellStyle9 = new XPTable.Models.CellStyle();
+            XPTable.Models.Row row4 = new XPTable.Models.Row();
+            XPTable.Models.Cell cell10 = new XPTable.Models.Cell();
+            XPTable.Models.CellStyle cellStyle10 = new XPTable.Models.CellStyle();
+            XPTable.Models.Cell cell11 = new XPTable.Models.Cell();
+            XPTable.Models.CellStyle cellStyle11 = new XPTable.Models.CellStyle();
+            XPTable.Models.Cell cell12 = new XPTable.Models.Cell();
+            XPTable.Models.CellStyle cellStyle12 = new XPTable.Models.CellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            XPTable.Models.DataSourceColumnBinder dataSourceColumnBinder1 = new XPTable.Models.DataSourceColumnBinder();
-            XPTable.Renderers.DragDropRenderer dragDropRenderer1 = new XPTable.Renderers.DragDropRenderer();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("All");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Test");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Incomplete", new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Complete");
+            XPTable.Models.DataSourceColumnBinder dataSourceColumnBinder2 = new XPTable.Models.DataSourceColumnBinder();
+            XPTable.Renderers.DragDropRenderer dragDropRenderer2 = new XPTable.Renderers.DragDropRenderer();
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("All");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Test");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Incomplete", new System.Windows.Forms.TreeNode[] {
+            treeNode6});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Complete");
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,7 +71,10 @@
             this.table1 = new XPTable.Models.Table();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -161,6 +164,8 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 497);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(785, 22);
@@ -199,104 +204,105 @@
             // tableModel1
             // 
             this.tableModel1.RowHeight = 22;
-            cellStyle1.Alignment = XPTable.Models.ColumnAlignment.Left;
-            cellStyle1.BackColor = System.Drawing.Color.Empty;
-            cellStyle1.Font = null;
-            cellStyle1.ForeColor = System.Drawing.Color.Empty;
-            cellStyle1.LineAlignment = XPTable.Models.RowAlignment.Center;
-            cellStyle1.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
-            cellStyle1.WordWrap = false;
-            cell1.CellStyle = cellStyle1;
-            cell1.ContentWidth = 49;
-            cell1.Text = "2nd Row";
-            cell1.ToolTipText = "";
-            cell1.WordWrap = false;
-            cellStyle2.Alignment = XPTable.Models.ColumnAlignment.Left;
-            cellStyle2.BackColor = System.Drawing.Color.Empty;
-            cellStyle2.Font = null;
-            cellStyle2.ForeColor = System.Drawing.Color.Empty;
-            cellStyle2.LineAlignment = XPTable.Models.RowAlignment.Center;
-            cellStyle2.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
-            cellStyle2.WordWrap = false;
-            cell2.CellStyle = cellStyle2;
-            cell2.ContentWidth = 64;
-            cell2.Text = "Second row";
-            cell2.ToolTipText = "";
-            cell2.WordWrap = false;
-            cellStyle3.Alignment = XPTable.Models.ColumnAlignment.Left;
-            cellStyle3.BackColor = System.Drawing.Color.Empty;
-            cellStyle3.Font = null;
-            cellStyle3.ForeColor = System.Drawing.Color.Empty;
-            cellStyle3.LineAlignment = XPTable.Models.RowAlignment.Center;
-            cellStyle3.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
-            cellStyle3.WordWrap = false;
-            cell3.CellStyle = cellStyle3;
-            cell3.ContentWidth = 0;
-            cell3.Data = 33;
-            cell3.WordWrap = false;
-            row1.Cells.AddRange(new XPTable.Models.Cell[] {
-            cell1,
-            cell2,
-            cell3});
-            row1.ChildIndex = 0;
-            row1.Editable = false;
-            row1.ExpandSubRows = true;
-            row1.Height = 22;
-            cellStyle4.Alignment = XPTable.Models.ColumnAlignment.Left;
-            cellStyle4.BackColor = System.Drawing.Color.Empty;
-            cellStyle4.Font = null;
-            cellStyle4.ForeColor = System.Drawing.Color.Empty;
-            cellStyle4.LineAlignment = XPTable.Models.RowAlignment.Center;
-            cellStyle4.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
-            cellStyle4.WordWrap = false;
-            cell4.CellStyle = cellStyle4;
-            cell4.ContentWidth = 48;
-            cell4.Data = "";
-            cell4.Text = "Hello.jpg";
-            cell4.WordWrap = false;
-            cellStyle5.Alignment = XPTable.Models.ColumnAlignment.Left;
-            cellStyle5.BackColor = System.Drawing.Color.Empty;
-            cellStyle5.Font = null;
-            cellStyle5.ForeColor = System.Drawing.Color.Empty;
-            cellStyle5.LineAlignment = XPTable.Models.RowAlignment.Center;
-            cellStyle5.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
-            cellStyle5.WordWrap = false;
-            cell5.CellStyle = cellStyle5;
-            cell5.ContentWidth = 118;
-            cell5.Data = "";
-            cell5.Text = "http://website/Hello.jpg";
-            cell5.WordWrap = false;
-            cellStyle6.Alignment = XPTable.Models.ColumnAlignment.Left;
-            cellStyle6.BackColor = System.Drawing.Color.Empty;
-            cellStyle6.Font = null;
-            cellStyle6.ForeColor = System.Drawing.Color.Empty;
-            cellStyle6.LineAlignment = XPTable.Models.RowAlignment.Center;
-            cellStyle6.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
-            cellStyle6.WordWrap = false;
-            cell6.CellStyle = cellStyle6;
-            cell6.ContentWidth = 0;
-            cell6.Data = 25;
-            cell6.Tag = "";
-            cell6.Text = "";
-            cell6.ToolTipText = "";
-            cell6.WordWrap = false;
-            row2.Cells.AddRange(new XPTable.Models.Cell[] {
-            cell4,
-            cell5,
-            cell6});
-            row2.ChildIndex = 0;
-            row2.Editable = false;
-            row2.ExpandSubRows = true;
-            row2.Height = 22;
+            cellStyle7.Alignment = XPTable.Models.ColumnAlignment.Left;
+            cellStyle7.BackColor = System.Drawing.Color.Empty;
+            cellStyle7.Font = null;
+            cellStyle7.ForeColor = System.Drawing.Color.Empty;
+            cellStyle7.LineAlignment = XPTable.Models.RowAlignment.Center;
+            cellStyle7.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
+            cellStyle7.WordWrap = false;
+            cell7.CellStyle = cellStyle7;
+            cell7.ContentWidth = 49;
+            cell7.Text = "2nd Row";
+            cell7.ToolTipText = "";
+            cell7.WordWrap = false;
+            cellStyle8.Alignment = XPTable.Models.ColumnAlignment.Left;
+            cellStyle8.BackColor = System.Drawing.Color.Empty;
+            cellStyle8.Font = null;
+            cellStyle8.ForeColor = System.Drawing.Color.Empty;
+            cellStyle8.LineAlignment = XPTable.Models.RowAlignment.Center;
+            cellStyle8.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
+            cellStyle8.WordWrap = false;
+            cell8.CellStyle = cellStyle8;
+            cell8.ContentWidth = 64;
+            cell8.Text = "Second row";
+            cell8.ToolTipText = "";
+            cell8.WordWrap = false;
+            cellStyle9.Alignment = XPTable.Models.ColumnAlignment.Left;
+            cellStyle9.BackColor = System.Drawing.Color.Empty;
+            cellStyle9.Font = null;
+            cellStyle9.ForeColor = System.Drawing.Color.Empty;
+            cellStyle9.LineAlignment = XPTable.Models.RowAlignment.Center;
+            cellStyle9.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
+            cellStyle9.WordWrap = false;
+            cell9.CellStyle = cellStyle9;
+            cell9.ContentWidth = 0;
+            cell9.Data = 33;
+            cell9.WordWrap = false;
+            row3.Cells.AddRange(new XPTable.Models.Cell[] {
+            cell7,
+            cell8,
+            cell9});
+            row3.ChildIndex = 0;
+            row3.Editable = false;
+            row3.ExpandSubRows = true;
+            row3.Height = 22;
+            cellStyle10.Alignment = XPTable.Models.ColumnAlignment.Left;
+            cellStyle10.BackColor = System.Drawing.Color.Empty;
+            cellStyle10.Font = null;
+            cellStyle10.ForeColor = System.Drawing.Color.Empty;
+            cellStyle10.LineAlignment = XPTable.Models.RowAlignment.Center;
+            cellStyle10.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
+            cellStyle10.WordWrap = false;
+            cell10.CellStyle = cellStyle10;
+            cell10.ContentWidth = 48;
+            cell10.Data = "";
+            cell10.Text = "Hello.jpg";
+            cell10.WordWrap = false;
+            cellStyle11.Alignment = XPTable.Models.ColumnAlignment.Left;
+            cellStyle11.BackColor = System.Drawing.Color.Empty;
+            cellStyle11.Font = null;
+            cellStyle11.ForeColor = System.Drawing.Color.Empty;
+            cellStyle11.LineAlignment = XPTable.Models.RowAlignment.Center;
+            cellStyle11.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
+            cellStyle11.WordWrap = false;
+            cell11.CellStyle = cellStyle11;
+            cell11.ContentWidth = 118;
+            cell11.Data = "";
+            cell11.Text = "http://website/Hello.jpg";
+            cell11.WordWrap = false;
+            cellStyle12.Alignment = XPTable.Models.ColumnAlignment.Left;
+            cellStyle12.BackColor = System.Drawing.Color.Empty;
+            cellStyle12.Font = null;
+            cellStyle12.ForeColor = System.Drawing.Color.Empty;
+            cellStyle12.LineAlignment = XPTable.Models.RowAlignment.Center;
+            cellStyle12.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
+            cellStyle12.WordWrap = false;
+            cell12.CellStyle = cellStyle12;
+            cell12.ContentWidth = 0;
+            cell12.Data = 25;
+            cell12.Tag = "";
+            cell12.Text = "";
+            cell12.ToolTipText = "";
+            cell12.WordWrap = false;
+            row4.Cells.AddRange(new XPTable.Models.Cell[] {
+            cell10,
+            cell11,
+            cell12});
+            row4.ChildIndex = 0;
+            row4.Editable = false;
+            row4.ExpandSubRows = true;
+            row4.Height = 22;
             this.tableModel1.Rows.AddRange(new XPTable.Models.Row[] {
-            row1,
-            row2});
+            row3,
+            row4});
             // 
             // toolStrip1
             // 
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
+            this.toolStripButton1,
+            this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(785, 25);
@@ -310,17 +316,18 @@
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Text = "Add URL";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // table1
             // 
             this.table1.BorderColor = System.Drawing.Color.Black;
             this.table1.ColumnModel = this.columnModel1;
             this.table1.DataMember = null;
-            this.table1.DataSourceColumnBinder = dataSourceColumnBinder1;
+            this.table1.DataSourceColumnBinder = dataSourceColumnBinder2;
             this.table1.Dock = System.Windows.Forms.DockStyle.Fill;
-            dragDropRenderer1.ForeColor = System.Drawing.Color.Red;
-            this.table1.DragDropRenderer = dragDropRenderer1;
+            dragDropRenderer2.ForeColor = System.Drawing.Color.Red;
+            this.table1.DragDropRenderer = dragDropRenderer2;
             this.table1.FullRowSelect = true;
             this.table1.GridLines = XPTable.Models.GridLines.Both;
             this.table1.GridLinesContrainedToData = false;
@@ -334,8 +341,6 @@
             this.table1.TableModel = this.tableModel1;
             this.table1.Text = "table1";
             this.table1.UnfocusedBorderColor = System.Drawing.Color.Black;
-            // After table has been filled, sort it by filename (ascending)
-            this.table1.Sort(0, System.Windows.Forms.SortOrder.Ascending);
             // 
             // splitContainer1
             // 
@@ -368,23 +373,38 @@
             this.treeView1.ItemHeight = 22;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Node0";
-            treeNode1.Text = "All";
-            treeNode2.Name = "Node5";
-            treeNode2.Text = "Test";
-            treeNode3.Name = "Node1";
-            treeNode3.Text = "Incomplete";
-            treeNode4.Name = "Node2";
-            treeNode4.Text = "Complete";
+            treeNode5.Name = "Node0";
+            treeNode5.Text = "All";
+            treeNode6.Name = "Node5";
+            treeNode6.Text = "Test";
+            treeNode7.Name = "Node1";
+            treeNode7.Text = "Incomplete";
+            treeNode8.Name = "Node2";
+            treeNode8.Text = "Complete";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode3,
-            treeNode4});
+            treeNode5,
+            treeNode7,
+            treeNode8});
             this.treeView1.ShowLines = false;
             this.treeView1.Size = new System.Drawing.Size(174, 449);
             this.treeView1.TabIndex = 0;
             this.treeView1.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView1_BeforeSelect);
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "toolStripButton2";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // Form1
             // 
@@ -401,6 +421,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).EndInit();
@@ -436,6 +458,8 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

@@ -92,8 +92,7 @@ namespace LittleDownloadManager
         // If File->Add URL is clicked
         private void addURLToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new AddURL(this);
-            f.ShowDialog();
+            openAddURLForm();
         }
 
         // If File->Exit is clicked
@@ -110,7 +109,8 @@ namespace LittleDownloadManager
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            // Update status bar
+            updateStatusBar();
         }
 
         #region TreeView bold selection
@@ -134,13 +134,18 @@ namespace LittleDownloadManager
 
         public void addURLToTable(String filename, String url)
         {
+            // Create new cell variables
             XPTable.Models.Cell cell1 = new XPTable.Models.Cell();
             XPTable.Models.Cell cell2 = new XPTable.Models.Cell();
             XPTable.Models.Cell cell3 = new XPTable.Models.Cell();
+
+            // Put the cell data together
             Uri uri = new Uri(url);
             cell1.Text = System.IO.Path.GetFileName(uri.LocalPath);
             cell2.Text = url;
             cell3.Data = 0;
+
+            // Put the cells together into a row
             XPTable.Models.Row row = new XPTable.Models.Row(
                 new XPTable.Models.Cell[] {
                     cell1,
@@ -148,7 +153,28 @@ namespace LittleDownloadManager
                     cell3
                 }
             );
+
+            // Add the row to the table
             tableModel1.Rows.Add(row);
+
+            // Update status bar
+            updateStatusBar();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            openAddURLForm();
+        }
+
+        private void openAddURLForm()
+        {
+            Form f = new AddURL(this);
+            f.ShowDialog();
+        }
+
+        private void updateStatusBar()
+        {
+            toolStripStatusLabel1.Text = tableModel1.Rows.Count.ToString() + " unfinished downloads.";
         }
     }
 }
