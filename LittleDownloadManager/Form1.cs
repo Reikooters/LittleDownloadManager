@@ -16,11 +16,6 @@ namespace LittleDownloadManager
             InitializeComponent();
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
-        }
-
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
@@ -51,11 +46,7 @@ namespace LittleDownloadManager
 
         }
 
-        private void treeView1_AfterSelect_1(object sender, TreeViewEventArgs e)
-        {
-
-        }
-
+        #region SplitContainer Focus Workaround
         /* --- SplitContainer focus workaround ---
          * by Scott Morrison of Microsoft */
         // Temp variable to store a previously focused control
@@ -96,10 +87,13 @@ namespace LittleDownloadManager
             }
         }
         /* --- end SplitContainer focus workaround --- */
+        #endregion
 
+        // If File->Add URL is clicked
         private void addURLToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form f = new AddURL();
+            f.ShowDialog();
         }
 
         // If File->Exit is clicked
@@ -118,5 +112,24 @@ namespace LittleDownloadManager
         {
 
         }
+
+        #region TreeView bold selection
+        /* --- begin TreeView bold selection --- */
+        private void treeView1_BeforeSelect(object sender, TreeViewCancelEventArgs e)
+        {
+            if (e.Node.TreeView.SelectedNode != null)
+            {
+                e.Node.TreeView.SelectedNode.NodeFont = new System.Drawing.Font(e.Node.TreeView.SelectedNode.NodeFont, e.Node.TreeView.SelectedNode.NodeFont.Style ^ FontStyle.Bold);
+            }
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            e.Node.NodeFont = new System.Drawing.Font(treeView1.SelectedNode.TreeView.Font, treeView1.SelectedNode.TreeView.Font.Style ^ FontStyle.Bold);
+            e.Node.Text = e.Node.Text;
+            e.Node.Expand();
+        }
+        /* --- end TreeView bold selection --- */
+        #endregion
     }
 }
