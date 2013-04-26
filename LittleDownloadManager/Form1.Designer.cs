@@ -334,6 +334,8 @@
             this.table1.TableModel = this.tableModel1;
             this.table1.Text = "table1";
             this.table1.UnfocusedBorderColor = System.Drawing.Color.Black;
+            // After table has been filled, sort it by filename (ascending)
+            this.table1.Sort(0, System.Windows.Forms.SortOrder.Ascending);
             // 
             // splitContainer1
             // 
