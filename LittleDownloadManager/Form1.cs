@@ -109,6 +109,9 @@ namespace LittleDownloadManager
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // After table has been filled, sort it by filename (ascending)
+            this.table1.Sort(0, System.Windows.Forms.SortOrder.Ascending);
+
             // Update status bar
             updateStatusBar();
         }
