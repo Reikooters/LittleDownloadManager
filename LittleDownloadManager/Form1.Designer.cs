@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            XPTable.Models.Row row1 = new XPTable.Models.Row();
-            XPTable.Models.Cell cell1 = new XPTable.Models.Cell();
-            XPTable.Models.CellStyle cellStyle1 = new XPTable.Models.CellStyle();
-            XPTable.Models.Cell cell2 = new XPTable.Models.Cell();
-            XPTable.Models.CellStyle cellStyle2 = new XPTable.Models.CellStyle();
-            XPTable.Models.Cell cell3 = new XPTable.Models.Cell();
-            XPTable.Models.CellStyle cellStyle3 = new XPTable.Models.CellStyle();
-            XPTable.Models.Row row2 = new XPTable.Models.Row();
-            XPTable.Models.Cell cell4 = new XPTable.Models.Cell();
-            XPTable.Models.CellStyle cellStyle4 = new XPTable.Models.CellStyle();
-            XPTable.Models.Cell cell5 = new XPTable.Models.Cell();
-            XPTable.Models.CellStyle cellStyle5 = new XPTable.Models.CellStyle();
-            XPTable.Models.Cell cell6 = new XPTable.Models.Cell();
-            XPTable.Models.CellStyle cellStyle6 = new XPTable.Models.CellStyle();
+            XPTable.Models.Row row15 = new XPTable.Models.Row();
+            XPTable.Models.Cell cell43 = new XPTable.Models.Cell();
+            XPTable.Models.CellStyle cellStyle43 = new XPTable.Models.CellStyle();
+            XPTable.Models.Cell cell44 = new XPTable.Models.Cell();
+            XPTable.Models.CellStyle cellStyle44 = new XPTable.Models.CellStyle();
+            XPTable.Models.Cell cell45 = new XPTable.Models.Cell();
+            XPTable.Models.CellStyle cellStyle45 = new XPTable.Models.CellStyle();
+            XPTable.Models.Row row16 = new XPTable.Models.Row();
+            XPTable.Models.Cell cell46 = new XPTable.Models.Cell();
+            XPTable.Models.CellStyle cellStyle46 = new XPTable.Models.CellStyle();
+            XPTable.Models.Cell cell47 = new XPTable.Models.Cell();
+            XPTable.Models.CellStyle cellStyle47 = new XPTable.Models.CellStyle();
+            XPTable.Models.Cell cell48 = new XPTable.Models.Cell();
+            XPTable.Models.CellStyle cellStyle48 = new XPTable.Models.CellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            XPTable.Models.DataSourceColumnBinder dataSourceColumnBinder1 = new XPTable.Models.DataSourceColumnBinder();
-            XPTable.Renderers.DragDropRenderer dragDropRenderer1 = new XPTable.Renderers.DragDropRenderer();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("All");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Test");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Incomplete", new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Complete");
+            XPTable.Models.DataSourceColumnBinder dataSourceColumnBinder2 = new XPTable.Models.DataSourceColumnBinder();
+            XPTable.Renderers.DragDropRenderer dragDropRenderer2 = new XPTable.Renderers.DragDropRenderer();
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("All");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Test");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Incomplete", new System.Windows.Forms.TreeNode[] {
+            treeNode30});
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Complete");
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,6 +61,7 @@
             this.aboutLittleDownloadManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.columnModel1 = new XPTable.Models.ColumnModel();
             this.textColumn1 = new XPTable.Models.TextColumn();
             this.textColumn2 = new XPTable.Models.TextColumn();
@@ -68,24 +69,27 @@
             this.tableModel1 = new XPTable.Models.TableModel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
             this.table1 = new XPTable.Models.Table();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -186,6 +190,12 @@
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
             // columnModel1
             // 
             this.columnModel1.Columns.AddRange(new XPTable.Models.Column[] {
@@ -217,98 +227,98 @@
             // tableModel1
             // 
             this.tableModel1.RowHeight = 22;
-            cellStyle1.Alignment = XPTable.Models.ColumnAlignment.Left;
-            cellStyle1.BackColor = System.Drawing.Color.Empty;
-            cellStyle1.Font = null;
-            cellStyle1.ForeColor = System.Drawing.Color.Empty;
-            cellStyle1.LineAlignment = XPTable.Models.RowAlignment.Center;
-            cellStyle1.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
-            cellStyle1.WordWrap = false;
-            cell1.CellStyle = cellStyle1;
-            cell1.ContentWidth = 49;
-            cell1.Text = "2nd Row";
-            cell1.ToolTipText = "";
-            cell1.WordWrap = false;
-            cellStyle2.Alignment = XPTable.Models.ColumnAlignment.Left;
-            cellStyle2.BackColor = System.Drawing.Color.Empty;
-            cellStyle2.Font = null;
-            cellStyle2.ForeColor = System.Drawing.Color.Empty;
-            cellStyle2.LineAlignment = XPTable.Models.RowAlignment.Center;
-            cellStyle2.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
-            cellStyle2.WordWrap = false;
-            cell2.CellStyle = cellStyle2;
-            cell2.ContentWidth = 64;
-            cell2.Text = "Second row";
-            cell2.ToolTipText = "";
-            cell2.WordWrap = false;
-            cellStyle3.Alignment = XPTable.Models.ColumnAlignment.Left;
-            cellStyle3.BackColor = System.Drawing.Color.Empty;
-            cellStyle3.Font = null;
-            cellStyle3.ForeColor = System.Drawing.Color.Empty;
-            cellStyle3.LineAlignment = XPTable.Models.RowAlignment.Center;
-            cellStyle3.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
-            cellStyle3.WordWrap = false;
-            cell3.CellStyle = cellStyle3;
-            cell3.ContentWidth = 0;
-            cell3.Data = 33;
-            cell3.WordWrap = false;
-            row1.Cells.AddRange(new XPTable.Models.Cell[] {
-            cell1,
-            cell2,
-            cell3});
-            row1.ChildIndex = 0;
-            row1.Editable = false;
-            row1.ExpandSubRows = true;
-            row1.Height = 22;
-            cellStyle4.Alignment = XPTable.Models.ColumnAlignment.Left;
-            cellStyle4.BackColor = System.Drawing.Color.Empty;
-            cellStyle4.Font = null;
-            cellStyle4.ForeColor = System.Drawing.Color.Empty;
-            cellStyle4.LineAlignment = XPTable.Models.RowAlignment.Center;
-            cellStyle4.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
-            cellStyle4.WordWrap = false;
-            cell4.CellStyle = cellStyle4;
-            cell4.ContentWidth = 48;
-            cell4.Data = "";
-            cell4.Text = "Hello.jpg";
-            cell4.WordWrap = false;
-            cellStyle5.Alignment = XPTable.Models.ColumnAlignment.Left;
-            cellStyle5.BackColor = System.Drawing.Color.Empty;
-            cellStyle5.Font = null;
-            cellStyle5.ForeColor = System.Drawing.Color.Empty;
-            cellStyle5.LineAlignment = XPTable.Models.RowAlignment.Center;
-            cellStyle5.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
-            cellStyle5.WordWrap = false;
-            cell5.CellStyle = cellStyle5;
-            cell5.ContentWidth = 118;
-            cell5.Data = "";
-            cell5.Text = "http://website/Hello.jpg";
-            cell5.WordWrap = false;
-            cellStyle6.Alignment = XPTable.Models.ColumnAlignment.Left;
-            cellStyle6.BackColor = System.Drawing.Color.Empty;
-            cellStyle6.Font = null;
-            cellStyle6.ForeColor = System.Drawing.Color.Empty;
-            cellStyle6.LineAlignment = XPTable.Models.RowAlignment.Center;
-            cellStyle6.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
-            cellStyle6.WordWrap = false;
-            cell6.CellStyle = cellStyle6;
-            cell6.ContentWidth = 0;
-            cell6.Data = 25;
-            cell6.Tag = "";
-            cell6.Text = "";
-            cell6.ToolTipText = "";
-            cell6.WordWrap = false;
-            row2.Cells.AddRange(new XPTable.Models.Cell[] {
-            cell4,
-            cell5,
-            cell6});
-            row2.ChildIndex = 0;
-            row2.Editable = false;
-            row2.ExpandSubRows = true;
-            row2.Height = 22;
+            cellStyle43.Alignment = XPTable.Models.ColumnAlignment.Left;
+            cellStyle43.BackColor = System.Drawing.Color.Empty;
+            cellStyle43.Font = null;
+            cellStyle43.ForeColor = System.Drawing.Color.Empty;
+            cellStyle43.LineAlignment = XPTable.Models.RowAlignment.Center;
+            cellStyle43.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
+            cellStyle43.WordWrap = false;
+            cell43.CellStyle = cellStyle43;
+            cell43.ContentWidth = 49;
+            cell43.Text = "2nd Row";
+            cell43.ToolTipText = "";
+            cell43.WordWrap = false;
+            cellStyle44.Alignment = XPTable.Models.ColumnAlignment.Left;
+            cellStyle44.BackColor = System.Drawing.Color.Empty;
+            cellStyle44.Font = null;
+            cellStyle44.ForeColor = System.Drawing.Color.Empty;
+            cellStyle44.LineAlignment = XPTable.Models.RowAlignment.Center;
+            cellStyle44.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
+            cellStyle44.WordWrap = false;
+            cell44.CellStyle = cellStyle44;
+            cell44.ContentWidth = 64;
+            cell44.Text = "Second row";
+            cell44.ToolTipText = "";
+            cell44.WordWrap = false;
+            cellStyle45.Alignment = XPTable.Models.ColumnAlignment.Left;
+            cellStyle45.BackColor = System.Drawing.Color.Empty;
+            cellStyle45.Font = null;
+            cellStyle45.ForeColor = System.Drawing.Color.Empty;
+            cellStyle45.LineAlignment = XPTable.Models.RowAlignment.Center;
+            cellStyle45.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
+            cellStyle45.WordWrap = false;
+            cell45.CellStyle = cellStyle45;
+            cell45.ContentWidth = 0;
+            cell45.Data = 33;
+            cell45.WordWrap = false;
+            row15.Cells.AddRange(new XPTable.Models.Cell[] {
+            cell43,
+            cell44,
+            cell45});
+            row15.ChildIndex = 0;
+            row15.Editable = false;
+            row15.ExpandSubRows = true;
+            row15.Height = 22;
+            cellStyle46.Alignment = XPTable.Models.ColumnAlignment.Left;
+            cellStyle46.BackColor = System.Drawing.Color.Empty;
+            cellStyle46.Font = null;
+            cellStyle46.ForeColor = System.Drawing.Color.Empty;
+            cellStyle46.LineAlignment = XPTable.Models.RowAlignment.Center;
+            cellStyle46.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
+            cellStyle46.WordWrap = false;
+            cell46.CellStyle = cellStyle46;
+            cell46.ContentWidth = 48;
+            cell46.Data = "";
+            cell46.Text = "Hello.jpg";
+            cell46.WordWrap = false;
+            cellStyle47.Alignment = XPTable.Models.ColumnAlignment.Left;
+            cellStyle47.BackColor = System.Drawing.Color.Empty;
+            cellStyle47.Font = null;
+            cellStyle47.ForeColor = System.Drawing.Color.Empty;
+            cellStyle47.LineAlignment = XPTable.Models.RowAlignment.Center;
+            cellStyle47.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
+            cellStyle47.WordWrap = false;
+            cell47.CellStyle = cellStyle47;
+            cell47.ContentWidth = 118;
+            cell47.Data = "";
+            cell47.Text = "http://website/Hello.jpg";
+            cell47.WordWrap = false;
+            cellStyle48.Alignment = XPTable.Models.ColumnAlignment.Left;
+            cellStyle48.BackColor = System.Drawing.Color.Empty;
+            cellStyle48.Font = null;
+            cellStyle48.ForeColor = System.Drawing.Color.Empty;
+            cellStyle48.LineAlignment = XPTable.Models.RowAlignment.Center;
+            cellStyle48.Padding = new XPTable.Models.CellPadding(0, 0, 0, 0);
+            cellStyle48.WordWrap = false;
+            cell48.CellStyle = cellStyle48;
+            cell48.ContentWidth = 0;
+            cell48.Data = 25;
+            cell48.Tag = "";
+            cell48.Text = "";
+            cell48.ToolTipText = "";
+            cell48.WordWrap = false;
+            row16.Cells.AddRange(new XPTable.Models.Cell[] {
+            cell46,
+            cell47,
+            cell48});
+            row16.ChildIndex = 0;
+            row16.Editable = false;
+            row16.ExpandSubRows = true;
+            row16.Height = 22;
             this.tableModel1.Rows.AddRange(new XPTable.Models.Row[] {
-            row1,
-            row2});
+            row15,
+            row16});
             // 
             // toolStrip1
             // 
@@ -320,7 +330,9 @@
             this.toolStripButton2,
             this.toolStripButton9,
             this.toolStripButton3,
-            this.toolStripSeparator3,
+            this.toolStripButton13,
+            this.toolStripButton12,
+            this.toolStripSeparator5,
             this.toolStripButton5,
             this.toolStripButton4,
             this.toolStripSeparator2,
@@ -329,10 +341,12 @@
             this.toolStripSeparator4,
             this.toolStripButton6,
             this.toolStripButton7,
-            this.toolStripButton11});
+            this.toolStripButton11,
+            this.toolStripButton14,
+            this.toolStripTextBox1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(785, 40);
+            this.toolStrip1.Size = new System.Drawing.Size(785, 37);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -348,77 +362,10 @@
             this.toolStripButton1.Text = "Add URL";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // table1
+            // toolStripSeparator1
             // 
-            this.table1.BorderColor = System.Drawing.Color.Black;
-            this.table1.ColumnModel = this.columnModel1;
-            this.table1.DataMember = null;
-            this.table1.DataSourceColumnBinder = dataSourceColumnBinder1;
-            this.table1.Dock = System.Windows.Forms.DockStyle.Fill;
-            dragDropRenderer1.ForeColor = System.Drawing.Color.Red;
-            this.table1.DragDropRenderer = dragDropRenderer1;
-            this.table1.FullRowSelect = true;
-            this.table1.GridLines = XPTable.Models.GridLines.Both;
-            this.table1.GridLinesContrainedToData = false;
-            this.table1.Location = new System.Drawing.Point(0, 0);
-            this.table1.MultiSelect = true;
-            this.table1.Name = "table1";
-            this.table1.NoItemsText = "There are no items in this list.";
-            this.table1.ShowSelectionRectangle = false;
-            this.table1.Size = new System.Drawing.Size(607, 430);
-            this.table1.TabIndex = 0;
-            this.table1.TableModel = this.tableModel1;
-            this.table1.Text = "table1";
-            this.table1.UnfocusedBorderColor = System.Drawing.Color.Black;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 67);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.table1);
-            this.splitContainer1.Size = new System.Drawing.Size(785, 430);
-            this.splitContainer1.SplitterDistance = 174;
-            this.splitContainer1.TabIndex = 7;
-            this.splitContainer1.TabStop = false;
-            this.splitContainer1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_MouseDown);
-            this.splitContainer1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_MouseUp);
-            // 
-            // treeView1
-            // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.FullRowSelect = true;
-            this.treeView1.HideSelection = false;
-            this.treeView1.ItemHeight = 22;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Node0";
-            treeNode1.Text = "All";
-            treeNode2.Name = "Node5";
-            treeNode2.Text = "Test";
-            treeNode3.Name = "Node1";
-            treeNode3.Text = "Incomplete";
-            treeNode4.Name = "Node2";
-            treeNode4.Text = "Complete";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode3,
-            treeNode4});
-            this.treeView1.ShowLines = false;
-            this.treeView1.Size = new System.Drawing.Size(174, 430);
-            this.treeView1.TabIndex = 0;
-            this.treeView1.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView1_BeforeSelect);
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 37);
             // 
             // toolStripButton2
             // 
@@ -431,16 +378,16 @@
             this.toolStripButton2.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton2.Text = "toolStripButton2";
             // 
-            // toolStripStatusLabel1
+            // toolStripButton9
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
+            this.toolStripButton9.AutoSize = false;
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
+            this.toolStripButton9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton9.Text = "toolStripButton9";
             // 
             // toolStripButton3
             // 
@@ -453,6 +400,17 @@
             this.toolStripButton3.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton3.Text = "toolStripButton3";
             // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.AutoSize = false;
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton5.Text = "toolStripButton5";
+            // 
             // toolStripButton4
             // 
             this.toolStripButton4.AutoSize = false;
@@ -464,16 +422,37 @@
             this.toolStripButton4.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton4.Text = "toolStripButton4";
             // 
-            // toolStripButton5
+            // toolStripSeparator2
             // 
-            this.toolStripButton5.AutoSize = false;
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton5.Text = "toolStripButton5";
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 37);
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.AutoSize = false;
+            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
+            this.toolStripButton10.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton10.Text = "toolStripButton10";
+            // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.AutoSize = false;
+            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
+            this.toolStripButton8.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton8.Text = "toolStripButton8";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 37);
             // 
             // toolStripButton6
             // 
@@ -497,49 +476,6 @@
             this.toolStripButton7.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton7.Text = "toolStripButton7";
             // 
-            // toolStripButton8
-            // 
-            this.toolStripButton8.AutoSize = false;
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
-            this.toolStripButton8.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton8.Text = "toolStripButton8";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 40);
-            // 
-            // toolStripButton9
-            // 
-            this.toolStripButton9.AutoSize = false;
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
-            this.toolStripButton9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton9.Text = "toolStripButton9";
-            // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.AutoSize = false;
-            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
-            this.toolStripButton10.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton10.Text = "toolStripButton10";
-            // 
             // toolStripButton11
             // 
             this.toolStripButton11.AutoSize = false;
@@ -551,10 +487,123 @@
             this.toolStripButton11.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton11.Text = "toolStripButton11";
             // 
-            // toolStripSeparator4
+            // table1
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 40);
+            this.table1.BorderColor = System.Drawing.Color.Black;
+            this.table1.ColumnModel = this.columnModel1;
+            this.table1.DataMember = null;
+            this.table1.DataSourceColumnBinder = dataSourceColumnBinder2;
+            this.table1.Dock = System.Windows.Forms.DockStyle.Fill;
+            dragDropRenderer2.ForeColor = System.Drawing.Color.Red;
+            this.table1.DragDropRenderer = dragDropRenderer2;
+            this.table1.FullRowSelect = true;
+            this.table1.GridLines = XPTable.Models.GridLines.Both;
+            this.table1.GridLinesContrainedToData = false;
+            this.table1.Location = new System.Drawing.Point(0, 0);
+            this.table1.MultiSelect = true;
+            this.table1.Name = "table1";
+            this.table1.NoItemsText = "There are no items in this list.";
+            this.table1.ShowSelectionRectangle = false;
+            this.table1.Size = new System.Drawing.Size(607, 433);
+            this.table1.TabIndex = 0;
+            this.table1.TableModel = this.tableModel1;
+            this.table1.Text = "table1";
+            this.table1.UnfocusedBorderColor = System.Drawing.Color.Black;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 64);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.table1);
+            this.splitContainer1.Size = new System.Drawing.Size(785, 433);
+            this.splitContainer1.SplitterDistance = 174;
+            this.splitContainer1.TabIndex = 7;
+            this.splitContainer1.TabStop = false;
+            this.splitContainer1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_MouseDown);
+            this.splitContainer1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_MouseUp);
+            // 
+            // treeView1
+            // 
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.FullRowSelect = true;
+            this.treeView1.HideSelection = false;
+            this.treeView1.ItemHeight = 22;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            treeNode29.Name = "Node0";
+            treeNode29.Text = "All";
+            treeNode30.Name = "Node5";
+            treeNode30.Text = "Test";
+            treeNode31.Name = "Node1";
+            treeNode31.Text = "Incomplete";
+            treeNode32.Name = "Node2";
+            treeNode32.Text = "Complete";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode29,
+            treeNode31,
+            treeNode32});
+            this.treeView1.ShowLines = false;
+            this.treeView1.Size = new System.Drawing.Size(174, 433);
+            this.treeView1.TabIndex = 0;
+            this.treeView1.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView1_BeforeSelect);
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.AutoSize = false;
+            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
+            this.toolStripButton12.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton12.Text = "toolStripButton12";
+            // 
+            // toolStripButton13
+            // 
+            this.toolStripButton13.AutoSize = false;
+            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton13.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton13.Image")));
+            this.toolStripButton13.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton13.Name = "toolStripButton13";
+            this.toolStripButton13.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton13.Text = "toolStripButton13";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 37);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(150, 37);
+            // 
+            // toolStripButton14
+            // 
+            this.toolStripButton14.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton14.AutoSize = false;
+            this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton14.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton14.Image")));
+            this.toolStripButton14.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton14.Name = "toolStripButton14";
+            this.toolStripButton14.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton14.Text = "toolStripButton14";
             // 
             // Form1
             // 
@@ -618,11 +667,15 @@
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton toolStripButton9;
         private System.Windows.Forms.ToolStripButton toolStripButton10;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton toolStripButton11;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton toolStripButton14;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
     }
 }
 
