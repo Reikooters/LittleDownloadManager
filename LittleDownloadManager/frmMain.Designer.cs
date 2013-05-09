@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            XPTable.Models.DataSourceColumnBinder dataSourceColumnBinder2 = new XPTable.Models.DataSourceColumnBinder();
-            XPTable.Renderers.DragDropRenderer dragDropRenderer2 = new XPTable.Renderers.DragDropRenderer();
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("All");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Test");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Incomplete", new System.Windows.Forms.TreeNode[] {
-            treeNode6});
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Complete");
+            XPTable.Models.DataSourceColumnBinder dataSourceColumnBinder1 = new XPTable.Models.DataSourceColumnBinder();
+            XPTable.Renderers.DragDropRenderer dragDropRenderer1 = new XPTable.Renderers.DragDropRenderer();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("All");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Test");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Incomplete", new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Complete");
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +49,16 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.columnModel = new XPTable.Models.ColumnModel();
+            this.colNumPriority = new XPTable.Models.NumberColumn();
+            this.colTxtLocalFilename = new XPTable.Models.TextColumn();
+            this.colTxtFilesize = new XPTable.Models.TextColumn();
+            this.colPgbProgress = new XPTable.Models.ProgressBarColumn();
+            this.colTxtStatus = new XPTable.Models.TextColumn();
+            this.colTxtSpeed = new XPTable.Models.TextColumn();
+            this.colTxtETA = new XPTable.Models.TextColumn();
+            this.colTxtURL = new XPTable.Models.TextColumn();
+            this.colTxtLocalPath = new XPTable.Models.TextColumn();
+            this.colTxtComment = new XPTable.Models.TextColumn();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.tsbAddUrl = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -73,13 +83,6 @@
             this.tableModel = new XPTable.Models.TableModel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tvCategories = new System.Windows.Forms.TreeView();
-            this.colNumPriority = new XPTable.Models.NumberColumn();
-            this.colTxtLocalFilename = new XPTable.Models.TextColumn();
-            this.colTxtFilesize = new XPTable.Models.TextColumn();
-            this.colPgbProgress = new XPTable.Models.ProgressBarColumn();
-            this.colTxtStatus = new XPTable.Models.TextColumn();
-            this.colTxtURL = new XPTable.Models.TextColumn();
-            this.colTxtComment = new XPTable.Models.TextColumn();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
@@ -194,9 +197,89 @@
             this.colTxtFilesize,
             this.colPgbProgress,
             this.colTxtStatus,
+            this.colTxtSpeed,
+            this.colTxtETA,
             this.colTxtURL,
+            this.colTxtLocalPath,
             this.colTxtComment});
             this.columnModel.HeaderHeight = 24;
+            // 
+            // colNumPriority
+            // 
+            this.colNumPriority.Alignment = XPTable.Models.ColumnAlignment.Center;
+            this.colNumPriority.Editable = false;
+            this.colNumPriority.ImageOnRight = true;
+            this.colNumPriority.IsTextTrimmed = false;
+            this.colNumPriority.Maximum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.colNumPriority.Text = "#";
+            this.colNumPriority.ToolTipText = "Priority";
+            this.colNumPriority.Width = 30;
+            // 
+            // colTxtLocalFilename
+            // 
+            this.colTxtLocalFilename.Editable = false;
+            this.colTxtLocalFilename.IsTextTrimmed = false;
+            this.colTxtLocalFilename.Text = "Local Filename";
+            this.colTxtLocalFilename.Width = 190;
+            // 
+            // colTxtFilesize
+            // 
+            this.colTxtFilesize.Editable = false;
+            this.colTxtFilesize.IsTextTrimmed = false;
+            this.colTxtFilesize.Text = "Size";
+            this.colTxtFilesize.Width = 65;
+            // 
+            // colPgbProgress
+            // 
+            this.colPgbProgress.IsTextTrimmed = false;
+            this.colPgbProgress.Text = "Progress";
+            this.colPgbProgress.Width = 120;
+            // 
+            // colTxtStatus
+            // 
+            this.colTxtStatus.Editable = false;
+            this.colTxtStatus.IsTextTrimmed = false;
+            this.colTxtStatus.Text = "Status";
+            this.colTxtStatus.Width = 95;
+            // 
+            // colTxtSpeed
+            // 
+            this.colTxtSpeed.Editable = false;
+            this.colTxtSpeed.IsTextTrimmed = false;
+            this.colTxtSpeed.Text = "Speed";
+            this.colTxtSpeed.Width = 65;
+            // 
+            // colTxtETA
+            // 
+            this.colTxtETA.Editable = false;
+            this.colTxtETA.IsTextTrimmed = false;
+            this.colTxtETA.Text = "ETA";
+            this.colTxtETA.Width = 65;
+            // 
+            // colTxtURL
+            // 
+            this.colTxtURL.Editable = false;
+            this.colTxtURL.IsTextTrimmed = false;
+            this.colTxtURL.Text = "URL";
+            this.colTxtURL.Width = 240;
+            // 
+            // colTxtLocalPath
+            // 
+            this.colTxtLocalPath.Editable = false;
+            this.colTxtLocalPath.IsTextTrimmed = false;
+            this.colTxtLocalPath.Text = "Local Path";
+            this.colTxtLocalPath.Width = 240;
+            // 
+            // colTxtComment
+            // 
+            this.colTxtComment.IsTextTrimmed = false;
+            this.colTxtComment.Text = "Comment";
+            this.colTxtComment.ToolTipText = "Right click an item and press \'Edit Comment\' to set/change comment.";
+            this.colTxtComment.Width = 220;
             // 
             // toolStrip
             // 
@@ -429,10 +512,10 @@
             this.table.BorderColor = System.Drawing.Color.Black;
             this.table.ColumnModel = this.columnModel;
             this.table.DataMember = null;
-            this.table.DataSourceColumnBinder = dataSourceColumnBinder2;
+            this.table.DataSourceColumnBinder = dataSourceColumnBinder1;
             this.table.Dock = System.Windows.Forms.DockStyle.Fill;
-            dragDropRenderer2.ForeColor = System.Drawing.Color.Red;
-            this.table.DragDropRenderer = dragDropRenderer2;
+            dragDropRenderer1.ForeColor = System.Drawing.Color.Red;
+            this.table.DragDropRenderer = dragDropRenderer1;
             this.table.FullRowSelect = true;
             this.table.GridLines = XPTable.Models.GridLines.Both;
             this.table.GridLinesContrainedToData = false;
@@ -441,7 +524,7 @@
             this.table.Name = "table";
             this.table.NoItemsText = "";
             this.table.ShowSelectionRectangle = false;
-            this.table.Size = new System.Drawing.Size(607, 433);
+            this.table.Size = new System.Drawing.Size(607, 437);
             this.table.TabIndex = 0;
             this.table.TableModel = this.tableModel;
             this.table.Text = "table1";
@@ -478,76 +561,23 @@
             this.tvCategories.ItemHeight = 22;
             this.tvCategories.Location = new System.Drawing.Point(0, 0);
             this.tvCategories.Name = "tvCategories";
-            treeNode5.Name = "Node0";
-            treeNode5.Text = "All";
-            treeNode6.Name = "Node5";
-            treeNode6.Text = "Test";
-            treeNode7.Name = "Node1";
-            treeNode7.Text = "Incomplete";
-            treeNode8.Name = "Node2";
-            treeNode8.Text = "Complete";
+            treeNode1.Name = "Node0";
+            treeNode1.Text = "All";
+            treeNode2.Name = "Node5";
+            treeNode2.Text = "Test";
+            treeNode3.Name = "Node1";
+            treeNode3.Text = "Incomplete";
+            treeNode4.Name = "Node2";
+            treeNode4.Text = "Complete";
             this.tvCategories.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode7,
-            treeNode8});
+            treeNode1,
+            treeNode3,
+            treeNode4});
             this.tvCategories.ShowLines = false;
-            this.tvCategories.Size = new System.Drawing.Size(174, 433);
+            this.tvCategories.Size = new System.Drawing.Size(174, 437);
             this.tvCategories.TabIndex = 0;
             this.tvCategories.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView1_BeforeSelect);
             this.tvCategories.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
-            // 
-            // colNumPriority
-            // 
-            this.colNumPriority.Editable = false;
-            this.colNumPriority.ImageOnRight = true;
-            this.colNumPriority.IsTextTrimmed = false;
-            this.colNumPriority.Maximum = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.colNumPriority.Text = "Priority";
-            this.colNumPriority.Width = 60;
-            // 
-            // colTxtLocalFilename
-            // 
-            this.colTxtLocalFilename.Editable = false;
-            this.colTxtLocalFilename.IsTextTrimmed = false;
-            this.colTxtLocalFilename.Text = "Local Filename";
-            this.colTxtLocalFilename.Width = 215;
-            // 
-            // colTxtFilesize
-            // 
-            this.colTxtFilesize.Editable = false;
-            this.colTxtFilesize.IsTextTrimmed = false;
-            this.colTxtFilesize.Text = "Size";
-            // 
-            // colPgbProgress
-            // 
-            this.colPgbProgress.IsTextTrimmed = false;
-            this.colPgbProgress.Text = "Progress";
-            this.colPgbProgress.Width = 120;
-            // 
-            // colTxtStatus
-            // 
-            this.colTxtStatus.Editable = false;
-            this.colTxtStatus.IsTextTrimmed = false;
-            this.colTxtStatus.Text = "Status";
-            this.colTxtStatus.Width = 95;
-            // 
-            // colTxtURL
-            // 
-            this.colTxtURL.Editable = false;
-            this.colTxtURL.IsTextTrimmed = false;
-            this.colTxtURL.Text = "URL";
-            this.colTxtURL.Width = 255;
-            // 
-            // colTxtComment
-            // 
-            this.colTxtComment.IsTextTrimmed = false;
-            this.colTxtComment.Text = "Comment";
-            this.colTxtComment.ToolTipText = "Right click an item and press \'Edit Comment\' to set/change comment.";
-            this.colTxtComment.Width = 150;
             // 
             // frmMain
             // 
@@ -561,7 +591,7 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "frmMain";
             this.Text = "Little Download Manager v0.1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
@@ -624,6 +654,9 @@
         private XPTable.Models.TextColumn colTxtStatus;
         private XPTable.Models.TextColumn colTxtURL;
         private XPTable.Models.TextColumn colTxtComment;
+        private XPTable.Models.TextColumn colTxtLocalPath;
+        private XPTable.Models.TextColumn colTxtSpeed;
+        private XPTable.Models.TextColumn colTxtETA;
     }
 }
 

@@ -71,6 +71,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="QueueManager.cs" />
     <Compile Include="frmAddURL.cs">
       <SubType>Form</SubType>
     </Compile>

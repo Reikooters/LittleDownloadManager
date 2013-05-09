@@ -11,10 +11,10 @@ namespace LittleDownloadManager
 {
     public partial class frmAddURL : Form
     {
-        private readonly frmMain form1;
+        private readonly frmMain mainForm;
         public frmAddURL(frmMain parentForm)
         {
-            form1 = parentForm;
+            mainForm = parentForm;
             InitializeComponent();
         }
 
@@ -44,7 +44,7 @@ namespace LittleDownloadManager
             // If the file name is not an empty string open it for saving.
             if (saveFileDialog1.FileName != "")
             {
-                form1.addURLToTable(saveFileDialog1.FileName, txtEnterURL.Text);
+                mainForm.addURLToTableAndUpdateStatusBar(0, saveFileDialog1.FileName, txtEnterURL.Text);
                 this.Close();
             }
         }

@@ -11,6 +11,8 @@ namespace LittleDownloadManager
 {
     public partial class frmMain : Form
     {
+        QueueManager queueManager = null;
+
         public frmMain()
         {
             InitializeComponent();
@@ -107,8 +109,13 @@ namespace LittleDownloadManager
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void frmMain_Load(object sender, EventArgs e)
         {
+            // Create QueueManager and load the queue from disk.
+            queueManager = new QueueManager("queue");
+
+            queueManager.fillTable(this);
+
             // After table has been filled, sort it by filename (ascending)
             this.table.Sort(0, System.Windows.Forms.SortOrder.Ascending);
 
@@ -135,30 +142,41 @@ namespace LittleDownloadManager
         /* --- end TreeView bold selection --- */
         #endregion
 
-        public void addURLToTable(String filename, String url)
+        public void addURLToTable(uint priority, String filename, String url)
         {
             // Create new cell variables
-            XPTable.Models.Cell cell1 = new XPTable.Models.Cell();
-            XPTable.Models.Cell cell2 = new XPTable.Models.Cell();
-            XPTable.Models.Cell cell3 = new XPTable.Models.Cell();
+            XPTable.Models.Cell[] cells = new XPTable.Models.Cell[10];
+
+            for (int i = 0; i < 10; ++i)
+            {
+                cells[i] = new XPTable.Models.Cell();
+            }
 
             // Put the cell data together
             Uri uri = new Uri(url);
-            cell1.Text = System.IO.Path.GetFileName(uri.LocalPath);
-            cell2.Text = url;
-            cell3.Data = 0;
+            cells[0].Data = priority;
+            cells[1].Text = System.IO.Path.GetFileName(filename);
+            cells[2].Text = "size";
+            cells[3].Data = 0;
+            cells[4].Text = "status";
+            cells[5].Text = "speed";
+            cells[6].Text = "eta";
+            cells[7].Text = url;
+            cells[8].Text = filename;
 
             // Put the cells together into a row
             XPTable.Models.Row row = new XPTable.Models.Row(
-                new XPTable.Models.Cell[] {
-                    cell1,
-                    cell2,
-                    cell3
-                }
+                cells
             );
 
             // Add the row to the table
             tableModel.Rows.Add(row);
+        }
+
+        public void addURLToTableAndUpdateStatusBar(uint priority, String filename, String url)
+        {
+            // Add URL to table
+            addURLToTable(priority, filename, url);
 
             // Update status bar
             updateStatusBar();
@@ -175,9 +193,11 @@ namespace LittleDownloadManager
             f.ShowDialog();
         }
 
-        private void updateStatusBar()
+        public void updateStatusBar()
         {
             toolStripStatusLabel1.Text = tableModel.Rows.Count.ToString() + " unfinished downloads.";
         }
+
+
     }
 }
