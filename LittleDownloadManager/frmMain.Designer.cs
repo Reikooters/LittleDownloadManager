@@ -49,9 +49,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.columnModel = new XPTable.Models.ColumnModel();
-            this.textColumn1 = new XPTable.Models.TextColumn();
-            this.textColumn2 = new XPTable.Models.TextColumn();
-            this.progressBarColumn1 = new XPTable.Models.ProgressBarColumn();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.tsbAddUrl = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -76,6 +73,13 @@
             this.tableModel = new XPTable.Models.TableModel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tvCategories = new System.Windows.Forms.TreeView();
+            this.colNumPriority = new XPTable.Models.NumberColumn();
+            this.colTxtLocalFilename = new XPTable.Models.TextColumn();
+            this.colTxtFilesize = new XPTable.Models.TextColumn();
+            this.colPgbProgress = new XPTable.Models.ProgressBarColumn();
+            this.colTxtStatus = new XPTable.Models.TextColumn();
+            this.colTxtURL = new XPTable.Models.TextColumn();
+            this.colTxtComment = new XPTable.Models.TextColumn();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
@@ -185,36 +189,14 @@
             // columnModel
             // 
             this.columnModel.Columns.AddRange(new XPTable.Models.Column[] {
-            this.textColumn1,
-            this.textColumn2,
-            this.progressBarColumn1,
-            this.textColumn1,
-            this.textColumn2,
-            this.progressBarColumn1,
-            this.textColumn1,
-            this.textColumn2,
-            this.progressBarColumn1});
+            this.colNumPriority,
+            this.colTxtLocalFilename,
+            this.colTxtFilesize,
+            this.colPgbProgress,
+            this.colTxtStatus,
+            this.colTxtURL,
+            this.colTxtComment});
             this.columnModel.HeaderHeight = 24;
-            // 
-            // textColumn1
-            // 
-            this.textColumn1.Editable = false;
-            this.textColumn1.IsTextTrimmed = false;
-            this.textColumn1.Text = "Filename";
-            this.textColumn1.Width = 215;
-            // 
-            // textColumn2
-            // 
-            this.textColumn2.Editable = false;
-            this.textColumn2.IsTextTrimmed = false;
-            this.textColumn2.Text = "URL";
-            this.textColumn2.Width = 255;
-            // 
-            // progressBarColumn1
-            // 
-            this.progressBarColumn1.IsTextTrimmed = false;
-            this.progressBarColumn1.Text = "Progress";
-            this.progressBarColumn1.Width = 120;
             // 
             // toolStrip
             // 
@@ -457,7 +439,7 @@
             this.table.Location = new System.Drawing.Point(0, 0);
             this.table.MultiSelect = true;
             this.table.Name = "table";
-            this.table.NoItemsText = "There are no items in this list.";
+            this.table.NoItemsText = "";
             this.table.ShowSelectionRectangle = false;
             this.table.Size = new System.Drawing.Size(607, 433);
             this.table.TabIndex = 0;
@@ -471,7 +453,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 64);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 60);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -481,7 +463,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.table);
-            this.splitContainer1.Size = new System.Drawing.Size(785, 433);
+            this.splitContainer1.Size = new System.Drawing.Size(785, 437);
             this.splitContainer1.SplitterDistance = 174;
             this.splitContainer1.TabIndex = 7;
             this.splitContainer1.TabStop = false;
@@ -513,6 +495,59 @@
             this.tvCategories.TabIndex = 0;
             this.tvCategories.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView1_BeforeSelect);
             this.tvCategories.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            // 
+            // colNumPriority
+            // 
+            this.colNumPriority.Editable = false;
+            this.colNumPriority.ImageOnRight = true;
+            this.colNumPriority.IsTextTrimmed = false;
+            this.colNumPriority.Maximum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.colNumPriority.Text = "Priority";
+            this.colNumPriority.Width = 60;
+            // 
+            // colTxtLocalFilename
+            // 
+            this.colTxtLocalFilename.Editable = false;
+            this.colTxtLocalFilename.IsTextTrimmed = false;
+            this.colTxtLocalFilename.Text = "Local Filename";
+            this.colTxtLocalFilename.Width = 215;
+            // 
+            // colTxtFilesize
+            // 
+            this.colTxtFilesize.Editable = false;
+            this.colTxtFilesize.IsTextTrimmed = false;
+            this.colTxtFilesize.Text = "Size";
+            // 
+            // colPgbProgress
+            // 
+            this.colPgbProgress.IsTextTrimmed = false;
+            this.colPgbProgress.Text = "Progress";
+            this.colPgbProgress.Width = 120;
+            // 
+            // colTxtStatus
+            // 
+            this.colTxtStatus.Editable = false;
+            this.colTxtStatus.IsTextTrimmed = false;
+            this.colTxtStatus.Text = "Status";
+            this.colTxtStatus.Width = 95;
+            // 
+            // colTxtURL
+            // 
+            this.colTxtURL.Editable = false;
+            this.colTxtURL.IsTextTrimmed = false;
+            this.colTxtURL.Text = "URL";
+            this.colTxtURL.Width = 255;
+            // 
+            // colTxtComment
+            // 
+            this.colTxtComment.IsTextTrimmed = false;
+            this.colTxtComment.Text = "Comment";
+            this.colTxtComment.ToolTipText = "Right click an item and press \'Edit Comment\' to set/change comment.";
+            this.colTxtComment.Width = 150;
             // 
             // frmMain
             // 
@@ -581,10 +616,14 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton tsbSearch;
         private System.Windows.Forms.ToolStripTextBox tstbSearch;
-        private XPTable.Models.TextColumn textColumn1;
-        private XPTable.Models.TextColumn textColumn2;
-        private XPTable.Models.ProgressBarColumn progressBarColumn1;
         private XPTable.Models.TableModel tableModel;
+        private XPTable.Models.NumberColumn colNumPriority;
+        private XPTable.Models.TextColumn colTxtLocalFilename;
+        private XPTable.Models.TextColumn colTxtFilesize;
+        private XPTable.Models.ProgressBarColumn colPgbProgress;
+        private XPTable.Models.TextColumn colTxtStatus;
+        private XPTable.Models.TextColumn colTxtURL;
+        private XPTable.Models.TextColumn colTxtComment;
     }
 }
 
