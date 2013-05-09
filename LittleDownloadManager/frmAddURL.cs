@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 namespace LittleDownloadManager
 {
-    public partial class AddURL : Form
+    public partial class frmAddURL : Form
     {
-        private readonly Form1 form1;
-        public AddURL(Form1 parentForm)
+        private readonly frmMain form1;
+        public frmAddURL(frmMain parentForm)
         {
             form1 = parentForm;
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace LittleDownloadManager
         {
             // Check URL is valid
             Uri uriResult;
-            String uriName = textBox1.Text;
+            String uriName = txtEnterURL.Text;
             bool result = Uri.TryCreate(uriName, UriKind.Absolute, out uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps || uriResult.Scheme == Uri.UriSchemeFtp);
             if (!result)
             {
@@ -44,7 +44,7 @@ namespace LittleDownloadManager
             // If the file name is not an empty string open it for saving.
             if (saveFileDialog1.FileName != "")
             {
-                form1.addURLToTable(saveFileDialog1.FileName, textBox1.Text);
+                form1.addURLToTable(saveFileDialog1.FileName, txtEnterURL.Text);
                 this.Close();
             }
         }

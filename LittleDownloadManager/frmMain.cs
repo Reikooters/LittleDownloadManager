@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace LittleDownloadManager
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
-        public Form1()
+        public frmMain()
         {
             InitializeComponent();
         }
@@ -110,7 +110,7 @@ namespace LittleDownloadManager
         private void Form1_Load(object sender, EventArgs e)
         {
             // After table has been filled, sort it by filename (ascending)
-            this.table1.Sort(0, System.Windows.Forms.SortOrder.Ascending);
+            this.table.Sort(0, System.Windows.Forms.SortOrder.Ascending);
 
             // Update status bar
             updateStatusBar();
@@ -128,7 +128,7 @@ namespace LittleDownloadManager
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            e.Node.NodeFont = new System.Drawing.Font(treeView1.SelectedNode.TreeView.Font, treeView1.SelectedNode.TreeView.Font.Style ^ FontStyle.Bold);
+            e.Node.NodeFont = new System.Drawing.Font(tvCategories.SelectedNode.TreeView.Font, tvCategories.SelectedNode.TreeView.Font.Style ^ FontStyle.Bold);
             e.Node.Text = e.Node.Text;
             //e.Node.Expand();
         }
@@ -158,7 +158,7 @@ namespace LittleDownloadManager
             );
 
             // Add the row to the table
-            tableModel1.Rows.Add(row);
+            tableModel.Rows.Add(row);
 
             // Update status bar
             updateStatusBar();
@@ -171,13 +171,13 @@ namespace LittleDownloadManager
 
         private void openAddURLForm()
         {
-            Form f = new AddURL(this);
+            Form f = new frmAddURL(this);
             f.ShowDialog();
         }
 
         private void updateStatusBar()
         {
-            toolStripStatusLabel1.Text = tableModel1.Rows.Count.ToString() + " unfinished downloads.";
+            toolStripStatusLabel1.Text = tableModel.Rows.Count.ToString() + " unfinished downloads.";
         }
     }
 }
