@@ -130,10 +130,5 @@ namespace LittleDownloadManager
                 Console.WriteLine("Yuuuu!");
             }
         }
-
-        public List<QueueItem> getQueueData()
-        {
-            return queueData;
-        }
     }
 }

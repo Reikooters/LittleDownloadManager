@@ -198,6 +198,29 @@ namespace LittleDownloadManager
             toolStripStatusLabel1.Text = tableModel.Rows.Count.ToString() + " unfinished downloads.";
         }
 
+        private void tsbWebsite_Click(object sender, EventArgs e)
+        {
+            string target = "http://www.reikooters.net";
 
+            try
+            {
+                System.Diagnostics.Process.Start(target);
+            }
+            catch (System.ComponentModel.Win32Exception noBrowser)
+            {
+                if (noBrowser.ErrorCode == -2147467259)
+                    MessageBox.Show(noBrowser.Message, "An error occured!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (System.Exception other)
+            {
+                MessageBox.Show(other.Message, "An error occured!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void aboutLittleDownloadManagerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = new frmAboutBox();
+            f.ShowDialog();
+        }
     }
 }

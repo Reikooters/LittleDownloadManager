@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             XPTable.Models.DataSourceColumnBinder dataSourceColumnBinder1 = new XPTable.Models.DataSourceColumnBinder();
             XPTable.Renderers.DragDropRenderer dragDropRenderer1 = new XPTable.Renderers.DragDropRenderer();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("All");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Test");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Incomplete", new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Complete");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("All");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Test");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Incomplete", new System.Windows.Forms.TreeNode[] {
+            treeNode10});
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Complete");
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -166,6 +166,7 @@
             this.aboutLittleDownloadManagerToolStripMenuItem.Name = "aboutLittleDownloadManagerToolStripMenuItem";
             this.aboutLittleDownloadManagerToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.aboutLittleDownloadManagerToolStripMenuItem.Text = "About Little Download Manager";
+            this.aboutLittleDownloadManagerToolStripMenuItem.Click += new System.EventHandler(this.aboutLittleDownloadManagerToolStripMenuItem_Click);
             // 
             // newToolStripMenuItem
             // 
@@ -486,6 +487,7 @@
             this.tsbWebsite.Size = new System.Drawing.Size(36, 36);
             this.tsbWebsite.Text = "toolStripButton11";
             this.tsbWebsite.ToolTipText = "Visit Application\'s Website";
+            this.tsbWebsite.Click += new System.EventHandler(this.tsbWebsite_Click);
             // 
             // tsbSearch
             // 
@@ -561,18 +563,18 @@
             this.tvCategories.ItemHeight = 22;
             this.tvCategories.Location = new System.Drawing.Point(0, 0);
             this.tvCategories.Name = "tvCategories";
-            treeNode1.Name = "Node0";
-            treeNode1.Text = "All";
-            treeNode2.Name = "Node5";
-            treeNode2.Text = "Test";
-            treeNode3.Name = "Node1";
-            treeNode3.Text = "Incomplete";
-            treeNode4.Name = "Node2";
-            treeNode4.Text = "Complete";
+            treeNode9.Name = "Node0";
+            treeNode9.Text = "All";
+            treeNode10.Name = "Node5";
+            treeNode10.Text = "Test";
+            treeNode11.Name = "Node1";
+            treeNode11.Text = "Incomplete";
+            treeNode12.Name = "Node2";
+            treeNode12.Text = "Complete";
             this.tvCategories.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode3,
-            treeNode4});
+            treeNode9,
+            treeNode11,
+            treeNode12});
             this.tvCategories.ShowLines = false;
             this.tvCategories.Size = new System.Drawing.Size(174, 437);
             this.tvCategories.TabIndex = 0;
