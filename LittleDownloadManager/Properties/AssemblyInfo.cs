@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Little Download Manager")]
-[assembly: AssemblyDescription("A lightweight, easy-to-use application which handles queueing, scheduling, pausing and resuming of HTTP downloads.")]
+[assembly: AssemblyDescription("A lightweight, easy-to-use application which handles queueing, scheduling, pausing and resuming of HTTP downloads.\r\n\r\nToolbar icons created by http://www.fasticon.com/")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Developed by Shane \"Reiko\" Swenson")]
 [assembly: AssemblyProduct("Little Download Manager")]
