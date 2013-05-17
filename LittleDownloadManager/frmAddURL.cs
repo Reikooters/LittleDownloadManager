@@ -40,10 +40,10 @@ namespace LittleDownloadManager
             saveFileDialog1.Filter = "All Files|*.*";
             saveFileDialog1.Title = "Select save location";
             saveFileDialog1.FileName = System.IO.Path.GetFileName(uriResult.LocalPath);
-            saveFileDialog1.ShowDialog();
+            DialogResult dlgResult = saveFileDialog1.ShowDialog();
 
-            // If the file name is not an empty string open it for saving.
-            if (saveFileDialog1.FileName != "")
+            // Make sure 'Save' was pressed and not 'Cancel'
+            if (dlgResult == DialogResult.OK)
             {
                 mainForm.addURLToTableAndUpdateStatusBar(0, saveFileDialog1.FileName, txtEnterURL.Text);
                 this.Close();
