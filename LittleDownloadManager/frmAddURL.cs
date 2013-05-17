@@ -39,6 +39,7 @@ namespace LittleDownloadManager
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "All Files|*.*";
             saveFileDialog1.Title = "Select save location";
+            saveFileDialog1.FileName = System.IO.Path.GetFileName(uriResult.LocalPath);
             saveFileDialog1.ShowDialog();
 
             // If the file name is not an empty string open it for saving.
