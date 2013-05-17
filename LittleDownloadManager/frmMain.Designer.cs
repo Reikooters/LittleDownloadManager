@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            XPTable.Models.DataSourceColumnBinder dataSourceColumnBinder2 = new XPTable.Models.DataSourceColumnBinder();
-            XPTable.Renderers.DragDropRenderer dragDropRenderer2 = new XPTable.Renderers.DragDropRenderer();
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("All");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Test");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Incomplete", new System.Windows.Forms.TreeNode[] {
-            treeNode14});
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Complete");
+            XPTable.Models.DataSourceColumnBinder dataSourceColumnBinder1 = new XPTable.Models.DataSourceColumnBinder();
+            XPTable.Renderers.DragDropRenderer dragDropRenderer1 = new XPTable.Renderers.DragDropRenderer();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("All");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Test");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Incomplete", new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Complete");
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -514,10 +514,11 @@
             this.table.BorderColor = System.Drawing.Color.Black;
             this.table.ColumnModel = this.columnModel;
             this.table.DataMember = null;
-            this.table.DataSourceColumnBinder = dataSourceColumnBinder2;
+            this.table.DataSourceColumnBinder = dataSourceColumnBinder1;
             this.table.Dock = System.Windows.Forms.DockStyle.Fill;
-            dragDropRenderer2.ForeColor = System.Drawing.Color.Red;
-            this.table.DragDropRenderer = dragDropRenderer2;
+            dragDropRenderer1.ForeColor = System.Drawing.Color.Red;
+            this.table.DragDropRenderer = dragDropRenderer1;
+            this.table.EnableToolTips = true;
             this.table.FullRowSelect = true;
             this.table.GridLines = XPTable.Models.GridLines.Both;
             this.table.GridLinesContrainedToData = false;
@@ -567,18 +568,18 @@
             this.tvCategories.ItemHeight = 22;
             this.tvCategories.Location = new System.Drawing.Point(0, 0);
             this.tvCategories.Name = "tvCategories";
-            treeNode13.Name = "Node0";
-            treeNode13.Text = "All";
-            treeNode14.Name = "Node5";
-            treeNode14.Text = "Test";
-            treeNode15.Name = "Node1";
-            treeNode15.Text = "Incomplete";
-            treeNode16.Name = "Node2";
-            treeNode16.Text = "Complete";
+            treeNode1.Name = "Node0";
+            treeNode1.Text = "All";
+            treeNode2.Name = "Node5";
+            treeNode2.Text = "Test";
+            treeNode3.Name = "Node1";
+            treeNode3.Text = "Incomplete";
+            treeNode4.Name = "Node2";
+            treeNode4.Text = "Complete";
             this.tvCategories.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode15,
-            treeNode16});
+            treeNode1,
+            treeNode3,
+            treeNode4});
             this.tvCategories.ShowLines = false;
             this.tvCategories.Size = new System.Drawing.Size(174, 437);
             this.tvCategories.TabIndex = 0;

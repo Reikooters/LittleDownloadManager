@@ -11,7 +11,7 @@ namespace LittleDownloadManager
 {
     public partial class frmMain : Form
     {
-        QueueManager queueManager = null;
+        public QueueManager queueManager = null;
 
         public frmMain()
         {
@@ -142,7 +142,7 @@ namespace LittleDownloadManager
         /* --- end TreeView bold selection --- */
         #endregion
 
-        public void addURLToTable(uint priority, String filename, String url)
+        public void addURLToTable(int priority, String filename, String url)
         {
             // Create new cell variables
             XPTable.Models.Cell[] cells = new XPTable.Models.Cell[10];
@@ -155,14 +155,14 @@ namespace LittleDownloadManager
             // Put the cell data together
             Uri uri = new Uri(url);
             cells[0].Data = priority;
-            cells[1].Text = System.IO.Path.GetFileName(filename);
+            cells[1].Text = cells[1].ToolTipText = System.IO.Path.GetFileName(filename);
             cells[2].Text = "size";
             cells[3].Data = 0;
             cells[4].Text = "status";
             cells[5].Text = "speed";
             cells[6].Text = "eta";
-            cells[7].Text = url;
-            cells[8].Text = filename;
+            cells[7].Text = cells[7].ToolTipText = url;
+            cells[8].Text = cells[8].ToolTipText = filename;
 
             // Put the cells together into a row
             XPTable.Models.Row row = new XPTable.Models.Row(
@@ -174,7 +174,7 @@ namespace LittleDownloadManager
             tableModel.Rows.Add(row);
         }
 
-        public void addURLToTableAndUpdateStatusBar(uint priority, String filename, String url)
+        public void addURLToTableAndUpdateStatusBar(int priority, String filename, String url)
         {
             // Add URL to table
             addURLToTable(priority, filename, url);

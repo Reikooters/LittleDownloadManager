@@ -30,9 +30,11 @@ string str3 = System.Text.Encoding.Unicode.GetString(bz2);
 
 namespace LittleDownloadManager
 {
-    class QueueManager
+    public class QueueManager
     {
-        // 
+        private string queueFilename;
+
+        // Structures for the queue
         class QueueHead
         {
             public string name;
@@ -41,19 +43,23 @@ namespace LittleDownloadManager
 
         struct QueueItem
         {
-            public uint priority;
+            public int priority;
             public string localFilename;
             public string URL;
         }
 
+        // Queue data stored in this
         List<QueueHead> queueData = new List<QueueHead>();
 
+        // Constructor
         public QueueManager(string filename)
         {
+            queueFilename = filename;
             load(filename);
             save();
         }
 
+        // Loads queue data from file
         private bool load(string filename)
         {
             Console.WriteLine(filename);
@@ -74,12 +80,12 @@ namespace LittleDownloadManager
                 // Currently only version 1 supported
                 if (ver == 1)
                 {
-                    uint numRecords;
+                    int numRecords;
                     int stringlen;
 
                     // Get number of records in file
-                    numRecords = b.ReadUInt32();
-                    pos += sizeof(uint);
+                    numRecords = b.ReadInt32();
+                    pos += sizeof(int);
                     Console.WriteLine(numRecords);
 
                     QueueHead qh = new QueueHead();
@@ -92,9 +98,9 @@ namespace LittleDownloadManager
 
                         // Read Priority
                         QueueItem qi = new QueueItem();
-                        qi.priority = b.ReadUInt32();
+                        qi.priority = b.ReadInt32();
                         Console.WriteLine(qi.priority);
-                        pos += sizeof(uint);
+                        pos += sizeof(int);
 
                         // Read Local filename
                         stringlen = b.ReadInt32();
@@ -122,11 +128,11 @@ namespace LittleDownloadManager
                 {
                     try
                     {
-                        uint numCategories;
-                        uint numItems;
+                        int numCategories;
+                        int numItems;
 
                         // Get number of categories
-                        numCategories = b.ReadUInt32();
+                        numCategories = b.ReadInt32();
                         Console.WriteLine(numCategories);
 
                         for (int i = 0; i < numCategories; ++i)
@@ -138,7 +144,7 @@ namespace LittleDownloadManager
                             Console.WriteLine(qh.name);
 
                             // Read number of items in category
-                            numItems = b.ReadUInt32();
+                            numItems = b.ReadInt32();
                             Console.WriteLine(numItems);
 
                             for (int j = 0; j < numItems; ++j)
@@ -146,7 +152,7 @@ namespace LittleDownloadManager
                                 QueueItem qi = new QueueItem();
 
                                 // Read Priority
-                                qi.priority = b.ReadUInt32();
+                                qi.priority = b.ReadInt32();
                                 Console.WriteLine(qi.priority);
 
                                 // Read Local Filename
@@ -175,10 +181,11 @@ namespace LittleDownloadManager
             return true;
         }
 
-        private void save()
+        // Saves queue data to file
+        // TODO: Check if there is enough hdd space before saving.
+        public void save()
         {
-            // FIX ME
-            using (BinaryWriter b = new BinaryWriter(File.Open("file.bin", FileMode.Create)))
+            using (BinaryWriter b = new BinaryWriter(File.Open(queueFilename, FileMode.Create)))
             {
                 // Write version
                 b.Write((short)2);
@@ -202,11 +209,6 @@ namespace LittleDownloadManager
                         b.Write(Convert.ToBase64String(System.Text.Encoding.Unicode.GetBytes(qi.URL)));
                     }
                 }
-
-
-                //string str = "http://www.google.com/hello.jpg";
-                //byte[] bz = System.Text.Encoding.Unicode.GetBytes(str);
-                //b.Write(bz);
             }
         }
 
@@ -221,6 +223,27 @@ namespace LittleDownloadManager
                     mainForm.addURLToTable(qi.priority, qi.localFilename, qi.URL);
                     Console.WriteLine("Yuuuu!");
                 }
+            }
+        }
+
+        public void addItem(string category, string filename, string url)
+        {
+            // Search for the specified category
+            QueueHead qh = queueData.Find(i => i.name.Equals(category));
+
+            // If it exists...
+            if (qh != null)
+            {
+                // Create a new item
+                QueueItem qi = new QueueItem();
+
+                // Assign its data
+                qi.priority = qh.items.Count + 1;
+                qi.localFilename = filename;
+                qi.URL = url;
+
+                // Add item to the category
+                qh.items.Add(qi);
             }
         }
     }

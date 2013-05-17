@@ -45,7 +45,9 @@ namespace LittleDownloadManager
             // Make sure 'Save' was pressed and not 'Cancel'
             if (dlgResult == DialogResult.OK)
             {
-                mainForm.addURLToTableAndUpdateStatusBar(0, saveFileDialog1.FileName, txtEnterURL.Text);
+                mainForm.queueManager.addItem("Default", saveFileDialog1.FileName, txtEnterURL.Text);
+                mainForm.queueManager.save();
+                //mainForm.addURLToTableAndUpdateStatusBar(0, saveFileDialog1.FileName, txtEnterURL.Text);
                 this.Close();
             }
         }
