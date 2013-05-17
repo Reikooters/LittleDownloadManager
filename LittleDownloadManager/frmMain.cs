@@ -168,6 +168,7 @@ namespace LittleDownloadManager
             XPTable.Models.Row row = new XPTable.Models.Row(
                 cells
             );
+            row.Height = 18;
 
             // Add the row to the table
             tableModel.Rows.Add(row);
