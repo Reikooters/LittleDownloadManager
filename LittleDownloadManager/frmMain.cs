@@ -420,16 +420,43 @@ namespace LittleDownloadManager
 
         private void tsbCopyToClipboard_Click(object sender, EventArgs e)
         {
+            copyLinksToClipboard();
+        }
+
+        private void mnuTableCopyLinksToClipboard_Click(object sender, EventArgs e)
+        {
+            copyLinksToClipboard();
+        }
+
+        private void copyLinksToClipboard()
+        {
+            // Make sure there is at least one link selected
+            if (table.SelectedIndicies.Length == 0)
+            {
+                // Give an error message
+                MessageBox.Show("No items were selected, so no links were copied.\r\nPlease select one or more items first.",
+                    "Little Download Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Concatenate all the selected links into a string
             string links = "";
 
             for (int i = 0; i < table.SelectedIndicies.Length; ++i)
             {
-                links += table.TableModel.Rows[ table.SelectedIndicies[i] ].Cells[7].Text + "\r\n";
+                links += table.TableModel.Rows[table.SelectedIndicies[i]].Cells[7].Text + "\r\n";
             }
 
+            // Put the string onto the clipboard
             Clipboard.SetText(links, TextDataFormat.UnicodeText);
 
-            string message = "The selected " + table.SelectedIndicies.Length.ToString() + " links were copied to the clipboard.";
+            // Give a confirmation message
+            string message;
+
+            if (table.SelectedIndicies.Length > 1)
+                message = "The URLs for the selected " + table.SelectedIndicies.Length.ToString() + " items were copied to the clipboard.";
+            else
+                message = "The URL for the selected item was copied to the clipboard.";
 
             MessageBox.Show(message, "Little Download Manager", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

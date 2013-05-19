@@ -460,6 +460,9 @@
         +cQWgotx/zC4XK7BP/98kmde3m8rUGrpBiZbNAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="mnuTable.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>600, 17</value>
+  </metadata>
   <metadata name="tableModel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>377, 18</value>
   </metadata>

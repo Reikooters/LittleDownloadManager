@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             XPTable.Models.DataSourceColumnBinder dataSourceColumnBinder1 = new XPTable.Models.DataSourceColumnBinder();
             XPTable.Renderers.DragDropRenderer dragDropRenderer1 = new XPTable.Renderers.DragDropRenderer();
@@ -83,6 +84,8 @@
             this.tableModel = new XPTable.Models.TableModel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tvCategories = new System.Windows.Forms.TreeView();
+            this.mnuTable = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuTableCopyLinksToClipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
@@ -91,6 +94,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.mnuTable.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -448,7 +452,7 @@
             this.tsbCopyToClipboard.Name = "tsbCopyToClipboard";
             this.tsbCopyToClipboard.Size = new System.Drawing.Size(36, 36);
             this.tsbCopyToClipboard.Text = "toolStripButton8";
-            this.tsbCopyToClipboard.ToolTipText = "Copy Links To Clipboard";
+            this.tsbCopyToClipboard.ToolTipText = "Copy Selected Links To Clipboard";
             this.tsbCopyToClipboard.Click += new System.EventHandler(this.tsbCopyToClipboard_Click);
             // 
             // toolStripSeparator4
@@ -517,6 +521,7 @@
             // 
             this.table.BorderColor = System.Drawing.Color.Black;
             this.table.ColumnModel = this.columnModel;
+            this.table.ContextMenuStrip = this.mnuTable;
             this.table.DataMember = null;
             this.table.DataSourceColumnBinder = dataSourceColumnBinder1;
             this.table.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -590,6 +595,20 @@
             this.tvCategories.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView1_BeforeSelect);
             this.tvCategories.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
+            // mnuTable
+            // 
+            this.mnuTable.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuTableCopyLinksToClipboard});
+            this.mnuTable.Name = "mnuTable";
+            this.mnuTable.Size = new System.Drawing.Size(252, 48);
+            // 
+            // mnuTableCopyLinksToClipboard
+            // 
+            this.mnuTableCopyLinksToClipboard.Name = "mnuTableCopyLinksToClipboard";
+            this.mnuTableCopyLinksToClipboard.Size = new System.Drawing.Size(251, 22);
+            this.mnuTableCopyLinksToClipboard.Text = "Copy Selected Links To Clipboard";
+            this.mnuTableCopyLinksToClipboard.Click += new System.EventHandler(this.mnuTableCopyLinksToClipboard_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -614,6 +633,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.mnuTable.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -668,6 +688,8 @@
         private XPTable.Models.TextColumn colTxtLocalPath;
         private XPTable.Models.TextColumn colTxtSpeed;
         private XPTable.Models.TextColumn colTxtETA;
+        private System.Windows.Forms.ContextMenuStrip mnuTable;
+        private System.Windows.Forms.ToolStripMenuItem mnuTableCopyLinksToClipboard;
     }
 }
 
