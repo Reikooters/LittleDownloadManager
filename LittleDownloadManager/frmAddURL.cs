@@ -47,7 +47,7 @@ namespace LittleDownloadManager
             {
                 mainForm.queueManager.addItem("Default", saveFileDialog1.FileName, txtEnterURL.Text);
                 mainForm.queueManager.save();
-                //mainForm.addURLToTableAndUpdateStatusBar(0, saveFileDialog1.FileName, txtEnterURL.Text);
+                mainForm.addURLToTableAndUpdateStatusBar(saveFileDialog1.FileName, txtEnterURL.Text);
                 this.Close();
             }
         }

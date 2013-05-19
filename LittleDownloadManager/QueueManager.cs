@@ -43,7 +43,6 @@ namespace LittleDownloadManager
 
         struct QueueItem
         {
-            public int priority;
             public string localFilename;
             public string URL;
         }
@@ -77,7 +76,9 @@ namespace LittleDownloadManager
                 if (pos >= len) return false;
                 Console.WriteLine(ver);
 
-                // Currently only version 1 supported
+                // Perform actions based on version
+                // Currently only version 3 and up supported.
+                /*
                 if (ver == 1)
                 {
                     int numRecords;
@@ -176,6 +177,55 @@ namespace LittleDownloadManager
                         Console.WriteLine("{0} caught", e.GetType().Name);
                     }
                 }
+                else */
+                if (ver == 3)
+                {
+                    try
+                    {
+                        int numCategories;
+                        int numItems;
+
+                        // Get number of categories
+                        numCategories = b.ReadInt32();
+                        Console.WriteLine(numCategories);
+
+                        for (int i = 0; i < numCategories; ++i)
+                        {
+                            QueueHead qh = new QueueHead();
+
+                            // Read category name
+                            qh.name = System.Text.Encoding.Unicode.GetString(Convert.FromBase64String(b.ReadString()));
+                            Console.WriteLine(qh.name);
+
+                            // Read number of items in category
+                            numItems = b.ReadInt32();
+                            Console.WriteLine(numItems);
+
+                            for (int j = 0; j < numItems; ++j)
+                            {
+                                QueueItem qi = new QueueItem();
+
+                                // Read Local Filename
+                                qi.localFilename = System.Text.Encoding.Unicode.GetString(Convert.FromBase64String(b.ReadString()));
+                                Console.WriteLine(qi.localFilename);
+
+                                // Read URL
+                                qi.URL = System.Text.Encoding.Unicode.GetString(Convert.FromBase64String(b.ReadString()));
+                                Console.WriteLine(qi.URL);
+
+                                // Add item to category
+                                qh.items.Add(qi);
+                            }
+
+                            // Add category to queue
+                            queueData.Add(qh);
+                        }
+                    }
+                    catch (EndOfStreamException e)
+                    {
+                        Console.WriteLine("{0} caught", e.GetType().Name);
+                    }
+                }
             }
 
             return true;
@@ -188,7 +238,7 @@ namespace LittleDownloadManager
             using (BinaryWriter b = new BinaryWriter(File.Open(queueFilename, FileMode.Create)))
             {
                 // Write version
-                b.Write((short)2);
+                b.Write((short)3);
 
                 // Write number of categories
                 b.Write(queueData.Count);
@@ -204,7 +254,6 @@ namespace LittleDownloadManager
                     foreach (QueueItem qi in qh.items)
                     {
                         // Write item data
-                        b.Write(qi.priority);
                         b.Write(Convert.ToBase64String(System.Text.Encoding.Unicode.GetBytes(qi.localFilename)));
                         b.Write(Convert.ToBase64String(System.Text.Encoding.Unicode.GetBytes(qi.URL)));
                     }
@@ -220,7 +269,7 @@ namespace LittleDownloadManager
             {
                 foreach (QueueItem qi in qh.items)
                 {
-                    mainForm.addURLToTable(qi.priority, qi.localFilename, qi.URL);
+                    mainForm.addURLToTable(qi.localFilename, qi.URL);
                     Console.WriteLine("Yuuuu!");
                 }
             }
@@ -229,7 +278,7 @@ namespace LittleDownloadManager
         public void addItem(string category, string filename, string url)
         {
             // Search for the specified category
-            QueueHead qh = queueData.Find(i => i.name.Equals(category));
+            QueueHead qh = getQH(category);
 
             // If it exists...
             if (qh != null)
@@ -238,13 +287,51 @@ namespace LittleDownloadManager
                 QueueItem qi = new QueueItem();
 
                 // Assign its data
-                qi.priority = qh.items.Count + 1;
                 qi.localFilename = filename;
                 qi.URL = url;
 
                 // Add item to the category
                 qh.items.Add(qi);
             }
+        }
+
+        public void delItem(string category, int index)
+        {
+            // Search for the specified category
+            QueueHead qh = getQH(category);
+
+            // If it exists...
+            if (qh != null)
+            {
+                // Remove the item with the given index
+                qh.items.RemoveAt(index);
+            }
+        }
+
+        public void swap(string category, int idxFirst, int idxSecond)
+        {
+            // Search for the specified category
+            QueueHead qh = getQH(category);
+
+            // If it exists...
+            if (qh != null)
+            {
+                // Keep a copy of the second item
+                QueueItem temp = qh.items[idxSecond];
+
+                // Overwrite the second item with the first
+                qh.items[idxSecond] = qh.items[idxFirst];
+
+                // Overwrite the first item with the second
+                qh.items[idxFirst] = temp;
+            }
+        }
+
+        // Searches for the QueueHead of the specified category.
+        private QueueHead getQH(string category)
+        {
+            // Search for the specified category and return it
+            return queueData.Find(i => i.name.Equals(category));
         }
     }
 }

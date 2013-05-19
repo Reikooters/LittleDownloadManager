@@ -342,8 +342,8 @@ namespace LittleDownloadManager
                     queueManager.swap("Default", currIdx, currIdx + moveValue);
 
                     // Swap items in table
-                    table.TableModel.Rows[currIdx + moveValue].Cells[0].Data = (int)(table.TableModel.Rows[currIdx + moveValue].Cells[0].Data) + 1;
-                    table.TableModel.Rows[currIdx].Cells[0].Data = (int)(table.TableModel.Rows[currIdx].Cells[0].Data) - 1;
+                    table.TableModel.Rows[currIdx + moveValue].Cells[0].Data = (int)(table.TableModel.Rows[currIdx + moveValue].Cells[0].Data) - moveValue;
+                    table.TableModel.Rows[currIdx].Cells[0].Data = (int)(table.TableModel.Rows[currIdx].Cells[0].Data) + moveValue;
 
                     for (int j = 0; j < table.TableModel.Rows[currIdx].Cells.Count; ++j)
                     {
@@ -366,6 +366,7 @@ namespace LittleDownloadManager
             }
             else
             {
+                // Loop needs to go in reverse, can't work out why
                 for (int i = selected.Length - 1; i >= 0; --i)
                 {
                     currIdx = selected[i];
@@ -374,12 +375,12 @@ namespace LittleDownloadManager
                     queueManager.swap("Default", currIdx, currIdx + moveValue);
 
                     // Swap items in table
-                    table.TableModel.Rows[currIdx + moveValue].Cells[0].Data = (int)(table.TableModel.Rows[currIdx + moveValue].Cells[0].Data) - 1;
-                    table.TableModel.Rows[currIdx].Cells[0].Data = (int)(table.TableModel.Rows[currIdx].Cells[0].Data) + 1;
+                    table.TableModel.Rows[currIdx + moveValue].Cells[0].Data = (int)(table.TableModel.Rows[currIdx + moveValue].Cells[0].Data) + moveValue;
+                    table.TableModel.Rows[currIdx].Cells[0].Data = (int)(table.TableModel.Rows[currIdx].Cells[0].Data) - moveValue;
 
                     for (int j = 0; j < table.TableModel.Rows[currIdx].Cells.Count; ++j)
                     {
-                        // Make backup copy of cell data
+                        // Make backup copy of first cell data
                         tmpData = table.TableModel.Rows[currIdx].Cells[j].Data;
                         tmpText = table.TableModel.Rows[currIdx].Cells[j].Text;
                         tmpToolTipText = table.TableModel.Rows[currIdx].Cells[j].ToolTipText;
@@ -397,7 +398,7 @@ namespace LittleDownloadManager
                 }
             }
 
-            // Put back the original selections
+            // Update table selections
             table.TableModel.Selections.Clear();
 
             XPTable.Models.CellPos cp = new XPTable.Models.CellPos();
@@ -410,6 +411,8 @@ namespace LittleDownloadManager
 
             // Save queue manager data to file.
             queueManager.save();
+
+            Console.WriteLine("--");
 
             // Put back the sort method to how it was.
             table.Sort(currSortIdx, currSortOrder);
