@@ -233,7 +233,7 @@ namespace LittleDownloadManager
             // Get selected rows
             int[] rows = table.SelectedIndicies;
 
-            for (int i = 0; i < rows.GetLength(0); ++i)
+            for (int i = 0; i < rows.Length; ++i)
             {
                 // Delete from queue manager
                 queueManager.delItem("Default", rows[i] - i);
@@ -247,6 +247,9 @@ namespace LittleDownloadManager
 
             // Now we need to fix up all the priority numbers in the table
             resortPriority();
+
+            // Update the status bar.
+            updateStatusBar();
         }
 
         private void resortPriority()
