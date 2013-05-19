@@ -211,11 +211,11 @@ namespace LittleDownloadManager
             catch (System.ComponentModel.Win32Exception noBrowser)
             {
                 if (noBrowser.ErrorCode == -2147467259)
-                    MessageBox.Show(noBrowser.Message, "An error occured!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("A web browser could not be detected on your computer, so the site could not be loaded.\r\n\r\nYou can visit the website manually at: " + target + "\r\n\r\n\r\nError Info: " + noBrowser.Message, "An error occured!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (System.Exception other)
             {
-                MessageBox.Show(other.Message, "An error occured!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occured when trying to access the site in your default web browser.\r\n\r\nYou can visit the website manually at: " + target + "\r\n\r\n\r\nError Info: " + other.Message, "An error occured!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
