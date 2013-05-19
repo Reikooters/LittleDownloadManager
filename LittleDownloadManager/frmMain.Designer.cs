@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            XPTable.Models.DataSourceColumnBinder dataSourceColumnBinder1 = new XPTable.Models.DataSourceColumnBinder();
-            XPTable.Renderers.DragDropRenderer dragDropRenderer1 = new XPTable.Renderers.DragDropRenderer();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("All");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Test");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Incomplete", new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Complete");
+            XPTable.Models.DataSourceColumnBinder dataSourceColumnBinder2 = new XPTable.Models.DataSourceColumnBinder();
+            XPTable.Renderers.DragDropRenderer dragDropRenderer2 = new XPTable.Renderers.DragDropRenderer();
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("All");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Test");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Incomplete", new System.Windows.Forms.TreeNode[] {
+            treeNode6});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Complete");
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -441,6 +441,7 @@
             this.tsbValidateLinks.Size = new System.Drawing.Size(36, 36);
             this.tsbValidateLinks.Text = "toolStripButton10";
             this.tsbValidateLinks.ToolTipText = "Validate Links";
+            this.tsbValidateLinks.Click += new System.EventHandler(this.tsbValidateLinks_Click);
             // 
             // tsbCopyToClipboard
             // 
@@ -523,10 +524,10 @@
             this.table.ColumnModel = this.columnModel;
             this.table.ContextMenuStrip = this.mnuTable;
             this.table.DataMember = null;
-            this.table.DataSourceColumnBinder = dataSourceColumnBinder1;
+            this.table.DataSourceColumnBinder = dataSourceColumnBinder2;
             this.table.Dock = System.Windows.Forms.DockStyle.Fill;
-            dragDropRenderer1.ForeColor = System.Drawing.Color.Red;
-            this.table.DragDropRenderer = dragDropRenderer1;
+            dragDropRenderer2.ForeColor = System.Drawing.Color.Red;
+            this.table.DragDropRenderer = dragDropRenderer2;
             this.table.EnableToolTips = true;
             this.table.FullRowSelect = true;
             this.table.GridLines = XPTable.Models.GridLines.Both;
@@ -577,18 +578,18 @@
             this.tvCategories.ItemHeight = 22;
             this.tvCategories.Location = new System.Drawing.Point(0, 0);
             this.tvCategories.Name = "tvCategories";
-            treeNode1.Name = "Node0";
-            treeNode1.Text = "All";
-            treeNode2.Name = "Node5";
-            treeNode2.Text = "Test";
-            treeNode3.Name = "Node1";
-            treeNode3.Text = "Incomplete";
-            treeNode4.Name = "Node2";
-            treeNode4.Text = "Complete";
+            treeNode5.Name = "Node0";
+            treeNode5.Text = "All";
+            treeNode6.Name = "Node5";
+            treeNode6.Text = "Test";
+            treeNode7.Name = "Node1";
+            treeNode7.Text = "Incomplete";
+            treeNode8.Name = "Node2";
+            treeNode8.Text = "Complete";
             this.tvCategories.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode3,
-            treeNode4});
+            treeNode5,
+            treeNode7,
+            treeNode8});
             this.tvCategories.ShowLines = false;
             this.tvCategories.Size = new System.Drawing.Size(174, 437);
             this.tvCategories.TabIndex = 0;
@@ -600,7 +601,7 @@
             this.mnuTable.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuTableCopyLinksToClipboard});
             this.mnuTable.Name = "mnuTable";
-            this.mnuTable.Size = new System.Drawing.Size(252, 48);
+            this.mnuTable.Size = new System.Drawing.Size(252, 26);
             // 
             // mnuTableCopyLinksToClipboard
             // 

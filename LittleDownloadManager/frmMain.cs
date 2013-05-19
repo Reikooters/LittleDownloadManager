@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Net;
 
 namespace LittleDownloadManager
 {
@@ -459,6 +460,80 @@ namespace LittleDownloadManager
                 message = "The URL for the selected item was copied to the clipboard.";
 
             MessageBox.Show(message, "Little Download Manager", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // This function written by Anuraj P and taken from:
+        // http://www.dotnetthoughts.net/how-to-check-remote-file-exists-using-c/
+        private bool remoteFileExists(string url, out long filesize)
+        {
+            try
+            {
+                //Creating the HttpWebRequest
+                HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+                //Setting the Request method HEAD, you can also use GET too.
+                request.Method = "HEAD";
+                //Getting the Web Response.
+                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+                {
+                    long contentLength;
+                    if (long.TryParse(response.Headers.Get("Content-Length"), out contentLength))
+                    {
+                        filesize = contentLength;
+                    }
+                    else
+                    {
+                        filesize = -1;
+                    }
+                    //Returns TRUE if the Status code == 200
+                    return (response.StatusCode == HttpStatusCode.OK);
+                }
+            }
+            catch
+            {
+                //Any exception will returns false.
+                filesize = -1;
+                return false;
+            }
+        }
+
+        private void tsbValidateLinks_Click(object sender, EventArgs e)
+        {
+            long filesize;
+            bool exists;
+
+            for (int i = 0; i < table.RowCount; ++i)
+            {
+                // Check exists + filesize
+                exists = remoteFileExists(table.TableModel.Rows[i].Cells[7].Text, out filesize);
+
+                // Set status
+                if (exists)
+                    table.TableModel.Rows[i].Cells[4].Text = "OK";
+                else
+                    table.TableModel.Rows[i].Cells[4].Text = "Error";
+
+                // Set filesize
+                if (filesize != -1)
+                    table.TableModel.Rows[i].Cells[2].Text = filesize.ToString();
+                else
+                    table.TableModel.Rows[i].Cells[2].Text = "?";
+
+                // Repaint the window after each URL is checked
+                Application.DoEvents();
+            }
+
+            /*
+            System.Net.WebRequest req = System.Net.HttpWebRequest.Create("http://stackoverflow.com/robots.txt");
+            req.Method = "HEAD";
+            using (System.Net.WebResponse resp = req.GetResponse())
+            {
+                int ContentLength;
+                if (int.TryParse(resp.Headers.Get("Content-Length"), out ContentLength))
+                {
+                    //Do something useful with ContentLength here 
+                }
+            }
+            */
         }
     }
 }
