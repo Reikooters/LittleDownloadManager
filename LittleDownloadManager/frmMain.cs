@@ -417,5 +417,21 @@ namespace LittleDownloadManager
             // Put back the sort method to how it was.
             table.Sort(currSortIdx, currSortOrder);
         }
+
+        private void tsbCopyToClipboard_Click(object sender, EventArgs e)
+        {
+            string links = "";
+
+            for (int i = 0; i < table.SelectedIndicies.Length; ++i)
+            {
+                links += table.TableModel.Rows[ table.SelectedIndicies[i] ].Cells[7].Text + "\r\n";
+            }
+
+            Clipboard.SetText(links, TextDataFormat.UnicodeText);
+
+            string message = "The selected " + table.SelectedIndicies.Length.ToString() + " links were copied to the clipboard.";
+
+            MessageBox.Show(message, "Little Download Manager", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
