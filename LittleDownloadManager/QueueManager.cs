@@ -63,6 +63,16 @@ namespace LittleDownloadManager
         {
             Console.WriteLine(filename);
 
+            // Check if file exists
+            if (!File.Exists(filename))
+            {
+                // File doesn't exist, so just create the default category.
+                QueueHead qh = new QueueHead();
+                qh.name = "Default";
+                queueData.Add(qh);
+                return false;
+            }
+
             using (BinaryReader b = new BinaryReader(File.Open(filename, FileMode.Open)))
             {
                 // Variables
@@ -226,6 +236,15 @@ namespace LittleDownloadManager
                         Console.WriteLine("{0} caught", e.GetType().Name);
                     }
                 }
+            }
+
+            // Make sure at least the default category is created, if no others
+            if (queueData.Count == 0)
+            {
+                // File doesn't exist, so just create the default category.
+                QueueHead qh = new QueueHead();
+                qh.name = "Default";
+                queueData.Add(qh);
             }
 
             return true;
